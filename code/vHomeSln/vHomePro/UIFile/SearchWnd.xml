@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="739,530" caption="0,0,0,35">
+  <Font id="0" name="微软雅黑" size="18" blod="true"/>
+  <Font id="1" name="微软雅黑" size="14" />
+  <VerticalLayout>
+    <HorizontalLayout height="70" bkimage="view_title.png" fade="true">
+      <Label name="labelIcon" float="true" pos="20,10,0,0" width="51" height="51" bkimage="file='jiaoyisuo_icon.png' dest='2,0,48,51'" />
+      <Label name="labelExcName" font="0" text="天津电交所" textcolor="#FFFFFFFF" float="true" pos="81,15,0,0" width="140" height="20" autocalcwidth="true" endellipsis="true" />
+      <Label name="labelAuth" font="1" text="企业认证已认证" textcolor="#FFFFFFFF" float="true" pos="81,40,0,0" width="100" height="20"/>
+      <Label name="labelAuthIcon1" float="true" pos="185,45,0,0" width="15" height="15" bkimage="authicon1.png" />
+      <Label name="labelAuthIcon2" float="true" pos="205,45,0,0" width="15" height="15" bkimage="authicon2.png" />
+      <Button name="btnMin" tooltip="最小化" float="true" pos="687,0,0,0"  width="23" height="29" normalimage="min_nor.png" hotimage="min_hot.png"/>
+      <Button name="btnClose" tooltip="关闭" float="true" pos="710,0,0,0" width="27" height="29" normalimage="close_normal.png" hotimage="close_hot.png"/>
+    </HorizontalLayout>
+
+    <HorizontalLayout height="45" bkcolor="#FFE5E5E5">
+      <Edit name="editSearch" font="1" textcolor="#FFE5E5E5" float="true" pos="20,8,0,0" width="192" height="29" bkimage="searchteacher_normal.png"/>
+      <Button name="btnSearch" float="true" pos="212,8,0,0" width="29" height="29" bkimage="serachteacherbtn_normal.png"/>
+    </HorizontalLayout>
+
+    <HorizontalLayout height="392" bkcolor="#FFFFFFFF" >
+        <ExTeacherList name="lstExTeacher" header="hidden" vscrollbar="true" itemshowhtml="true">
+        </ExTeacherList>
+    </HorizontalLayout>
+    
+    <HorizontalLayout height="23" bkcolor="#FFFFFFFE" >
+
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="442,556" caption="0,0,0,35">
+  <Font id="0" name="微软雅黑" size="22" />
+  <Font id="1" name="微软雅黑" size="14" bold="true"/>
+  <Font id="2" name="微软雅黑" size="14" />
+  <Font id="3" name="微软雅黑" size="13" />
+  <Font id="4" name="微软雅黑" size="12" />
+  <Font id="5" name="微软雅黑" size="16" />
+  <VerticalLayout>
+    <VerticalLayout bkimage="showinfo_title.png" height="165">
+      <HorizontalLayout height="32">
+        <VerticalLayout />
+        <VerticalLayout width="30">
+          <Button name="btnClose" float="true" pos="0,0,0,0" width="27" height="29" bkimage="close_normal.png" hotimage="close_hot.png"/>
+        </VerticalLayout>
+      </HorizontalLayout>
+      <HorizontalLayout>
+        <Label name="labelIcon" float="true" pos="30,5,0,0" width="100" height="100" bkimage="teacher_icon.png"/>
+        <Label name="labelName" float="true" pos="170,7,0,0" width="75" height="30" text="李健达" textcolor="#FFFFFFFF" font="0"/>
+        <Label name="labelLevel" float="true" pos="240,20,0,0" width="60" height="16" text="一级讲师" textcolor="#FFFFFFFF" font="1"/>
+        <Label name="labelAuth" float="true" pos="300,22,0,0" width="14" height="14" bkimage="selected.png" />
+        <Label float="true" pos="170,50,0,0" width="22" height="22" bkimage="file='personicon.png' dest='2,0,20,22' "  />
+        <Label name="labelNum" float="true" pos="192,50,0,0" width="30" height="20" text="100" textcolor="#FFCD0532" font="2" />
+        <Label  float="true" pos="220,50,0,0" width="35" height="20" text="人关注" textcolor="#FFFFFFFF" font="4"/>
+        <Label name="labelOneStart" float="true" pos="260,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="275,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="290,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="305,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="320,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelSign" float="true" pos="170,80,0,0" width="265" height="20" text="原油投资分析第一讲：玩转你手中的资源" textcolor="#FFFFFFFF" font="3"/>
+      </HorizontalLayout>
+
+    </VerticalLayout>
+    <HorizontalLayout height="44" bkimage="showmid.png">
+      <HorizontalLayout width="141" >
+        <Label name="labelInfo" float="true" pos="18,13,0,0" width="20" height="20" bkimage="info_normal.png" />
+        <Option name="opPerInfo" text="个人资料" textcolor="#FF9C9C9C" font= "2" />
+      </HorizontalLayout>
+      <HorizontalLayout width="148" bkcolor="#FF00FF" >
+        <Label name="labelArticle" float="true" pos="18,13,0,0" width="20" height="20" bkimage="file='atricle_normal.png' source='0,0,20,20' " />
+        <Option name="opArticle" text="发表的文章" textcolor="#FF9C9C9C" font= "2" />
+      </HorizontalLayout>
+      <HorizontalLayout width="154">
+        <Label name="labelTalk" float="true" pos="18,13,0,0" width="20" height="20" bkimage="file='talk_normal.png' source='0,0,20,20' " />
+        <Option name="opTalk" text="与我对话" textcolor="#FF9C9C9C" font= "2" />
+      </HorizontalLayout>
+    </HorizontalLayout>
+    <VerticalLayout bkcolor="#FF00FF00" height="390">
+      <TabLayout name="tabs">
+        <HorizontalLayout bkcolor="#FFFFFFFF">
+          <Label float="true" pos="20,30,0,0" width="40"  height="20" text="姓名：" textcolor="#FFB1B1B1" font="4"/>
+          <Label name="labelName1" float="true" pos="55,30,0,0" width="80" height="20" text="李健达" textcolor="#FFB1B1B1" font="4"/>
+          
+          <Label float="true" pos="20,80,0,0" width="60" height="20" text="毕业院校：" textcolor="#FFB1B1B1" font="4" />
+          <Label name="labelSchool" float="true" pos="80,80,0,0" width="160" height="20" text="北京大学, 营销管理" textcolor="#FFB1B1B1" font="4"/>
+
+          <Label float="true" pos="20,130,0,0" width="60" height="20" text="所在位置：" textcolor="#FFB1B1B1" font="4" />
+          <Label name="labelLocation" float="true" pos="80,130,0,0" width="160" height="20"  textcolor="#FFB1B1B1" font="4"/>
+
+          <Label float="true" pos="20,180,0,0" width="60" height="20" text="文化程度" textcolor="#FFB1B1B1" font="4" />
+          <Label name="labelEdu" float="true" pos="80,180,0,0" width="160" height="20"  textcolor="#FFB1B1B1" font="4"/>
+          
+          <Button name="btnCancelCare" float="true" pos="307,300,0,0" width="99" height="31" bkimage="btn_cancelcare_normal.png"/>
+          
+        </HorizontalLayout>
+        <HorizontalLayout bkcolor="#FFFFFFFF">
+          <Option name="opSilver" float="true" pos="21,10,0,0" width="90" height="50" text="白银分析" textcolor="#FFB1B1B1"/>
+        </HorizontalLayout>
+        
+        <HorizontalLayout bkcolor="#FFFFFFFF">
+          <HorizontalLayout >
+            <Label text="邮件内容："  width ="60" height="16" textcolor="#FF666666"/>
+            <ActiveX name="ie" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false"/>
+          </HorizontalLayout>
+        </HorizontalLayout>
+      </TabLayout>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

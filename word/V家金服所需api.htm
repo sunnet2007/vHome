@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+.zhushi {
+	color: green;
+	font-weight:bold;
+	font-size:20px;
+}
+.alert {
+	color: red;
+}
+.shuoming{
+	color:#F39;
+}
+</style>
+<title>V家金服所需api</title>
+</head>
+
+<body>
+<p> 网站首页: <span class="shuoming">http://115.28.134.125/index.php</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：返回的数据都在data里面</p>
+    <hr>
+<p>
+
+
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [修改原始密码]:</span> 
+	<span class="alert">http://115.28.134.125/index.php/app/nos_Modifypassword</span>
+		</p><li>----------------------请求参数----------------------</li>
+    	post参数：token <br>
+		post参数：oldpassword<br>
+    	post参数：newpassword<br>
+		<br>密码加密规则：$userpwd = md5(base64_encode(md5($pass)."yykjAwdx"));
+	 
+    	<li>----------------------返回数据----------------------</li>
+    	<li>["status"]<br>0 修改不成功,1 修改成功<br></li>
+    <br>
+    <hr>
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [登录接口]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_login</span>
+		<li>----------------------请求参数----------------------</li>
+    	post参数：phone（手机号为用户名）  userpwd （密码）	 
+		<br>	密码加密规则：$userpwd = md5(base64_encode(md5($pass)."yykjAwdx"));
+	 
+    	<li>----------------------返回数据----------------------</li>
+    	<li>["status"]  <br>-1 您的用户名或密码不正确<br>1 登录成功<br> 0  修改token失败 <br></li>
+    	<li>data:["uid"]  //用户ID</li>
+    	<li>data:["username"]  //用户昵称</li>
+    	<li>data:["phone"]  //手机号</li>
+    	<li>data:["token"]  //登录令牌</li>
+    	<li>data:["imgthumb"]//用户头像</li>&gt;
+    <br>
+    <hr>
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [发送手机验证码]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_sendyzm  </span> 
+    <li>----------------------请求参数----------------------</li>
+    	post参数：phone（手机号）
+    <br>
+	<li>----------------------返回数据----------------------</li>
+    	<li>["status"]  <br>0 手机号已在<br>-1 请输入手机号<br> 1  发送成功 <br></li>
+    <hr>
+	
+	
+	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [获取首页信息]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_shouye  </span>
+			<li>----------------------返回数据----------------------</li>
+			<li>data:["banner"] 列表 : 
+				<br>&nbsp;&nbsp;&nbsp;link 跳转地址可空 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 图片地址 
+			</li>
+			<li>data:["exchange"]交易所列表：
+				<br>&nbsp;&nbsp;&nbsp;id 交易所id 
+				<br>&nbsp;&nbsp;&nbsp;ex_name 交易所名称 
+				<br>&nbsp;&nbsp;&nbsp;exc_information 交易所简介 
+				<br>&nbsp;&nbsp;&nbsp;excimg 交易所图片 
+			</li>
+			<br>
+			
+
+    <hr>
+	
+	
+	
+	
+   <span class="zhushi"><b style="color:red;">(完成)</b>[财经分析列表]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_fenxi  </span>
+			<li>----------------------返回数据----------------------</li>
+			<li>data:["banner"]广告：
+				<br>&nbsp;&nbsp;&nbsp;link 跳转地址 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 图片地址 
+				<br><br>
+			</li>
+			
+			<li>data:["exchange"]交易所列表：
+				<br>&nbsp;&nbsp;&nbsp;id 交易所id 
+				<br>&nbsp;&nbsp;&nbsp;ex_name 交易所名称 
+				<br>&nbsp;&nbsp;&nbsp;exc_information 交易所简介 
+				<br>&nbsp;&nbsp;&nbsp;excimg 交易所图片 
+				<br>&nbsp;&nbsp;&nbsp;num 参加人数 
+				<br>&nbsp;&nbsp;&nbsp;rz 交易所认证（类似  [0] =&gt; 金融办[1] =&gt; v家[2] =&gt; 商务办） 
+			</li>
+
+    <hr>
+	
+	
+	
+	
+    <span class="zhushi"><b style="color:red;">(已完成)</b> [交易所下讲师列表]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_teachers  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+	 <li>----------------------请求参数----------------------</li>
+    	post参数：exid（交易所id）
+    <br>
+			<li>----------------------返回数据----------------------</li>
+			
+			
+			<li>data:
+				<br>&nbsp;&nbsp;&nbsp;username 教师名称 
+				<br>&nbsp;&nbsp;&nbsp;description 教师简介 
+				<br>&nbsp;&nbsp;&nbsp;userid 教师uid 
+				<br>&nbsp;&nbsp;&nbsp;star 教师星级 
+				<br>&nbsp;&nbsp;&nbsp;ex_name 交易所名称 
+				<br>&nbsp;&nbsp;&nbsp;num 粉丝人数 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 教师头像
+				<br>&nbsp;&nbsp;&nbsp;ifattention 1,已关注 0未关注
+			</li>
+			
+    <hr>
+	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b>  [点击关注]:</span> <span class="alert">http://115.28.134.125/index.php/app/addAttention  </span>
+			<li>----------------------请求参数----------------------</li>
+			<li>["tid"]：教师ID</li>
+			<li>----------------------返回数据----------------------</li>
+
+			<li>只能关注一个老师["status"]：-1 缺少参数 -2 用户无效 -3 关注失败 -4 已经关注过 1 关注成功</li>
+			
+    <hr>
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b>  [点击取消关注]:</span> <span class="alert">http://115.28.134.125/index.php/app/delAttention  </span>
+			<li>----------------------请求参数----------------------</li>
+			<li>["tid"]：教师ID</li>
+			<li>----------------------返回数据----------------------</li>
+			<li>["status"]：-1 缺少参数 -2 用户无效 -3 取消关注失败 1 取消关注成功</li>
+			
+    <hr>
+
+	
+	
+    <span class="zhushi"><b style="color:red;">(已完成)</b> [老师详情页]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_teachers_info  </span>
+			<li>----------------------请求参数----------------------</li>
+			<li>["teacher_id"]：教师ID</li>
+			<li>["ctgy"]：文章分类ID (<span style="color:red;">如果空，则读取第一个分类的数据</span>)</li>
+			<li>["page"]：页码</li>
+				<li>文章分类列表（读取 bgs_ctgy表 ，返回列表按照sort正序排列）</li>
+			<li>----------------------返回数据----------------------</li>
+			<li>该文章列表-带分页（bgs_teacher_article）</li>
+			<li>data["list"]文章列表:
+				<br>&nbsp;&nbsp;&nbsp;id 文章id 
+				<br>&nbsp;&nbsp;&nbsp;title 文章名称 
+				<br>&nbsp;&nbsp;&nbsp;about 文章简介 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 文章图片 
+			</li><br>
+			<li>data["thiscat"]当前分类:
+				<br>&nbsp;&nbsp;&nbsp;ctgname 分类名称 
+			</li>
+			<br>
+			<li>data["cat"]文章分类:
+				<br>&nbsp;&nbsp;&nbsp;ctgname 分类名称 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 分类图片 
+				<br>&nbsp;&nbsp;&nbsp;id 分类id 
+			</li>
+    <hr>
+	
+	
+	
+	
+ 
+ <span class="zhushi"><b style="color:red;">(已完成)</b> [老师详情页-点击文章]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_teacher_articleinfo/$articleid  </span>
+ <li>查出type 1,2  fromid =articleid  得出数组 $arr<br>
+	foreach($arr as $k=&gt;$v){
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查出com_id=$v['id'] and type=3  得出 $arr2
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $arr[$k]['other']="谁评论谁：内容"
+	<br>}</li>
+			<li>----------------------请求参数----------------------</li>
+			<li>$articleid：文章ID</li>
+			<li>$posttoken：token的值</li>
+			<li>----------------------返回数据----------------------</li>
+			<li>data['info']文章内容:</li>
+			<li>["posttoken"]：用户登录的token的值</li>
+			<li>["articleid"]：文章ID</li>
+			<li>["title"]：文章标题</li>
+			<li>["teacher"]：作者（根据uid）</li>
+			<li>["title"]：文章标题</li>
+			<li>["exchange"]：老师所在交易所</li>
+			<li>["ctime"]：文章发布时间</li>
+			<li>["istrue"]：当前用户是否已赞 0/1</li>
+			<li>["zan"]：文章的赞数</li>
+			<br><br>
+			
+			<li>data['comment']文章评论列表(bgs_comment表，如果评论type=3,查询用户名):
+			</li><li>["nickname"]：评论人昵称（根据bgs_comment表uid查询）</li>
+			<li>["fatname"]：父评论人</li>
+			<li>["fatid"]：父评论人ID</li>
+			<li>["sonname"]：子评论人</li>
+			<li>["sonid"]：子评论人ID</li>
+			<li>["content"]：评论内容</li>
+			<li>["ctime"]：点赞时间</li>
+    <hr>
+	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b>   [公告-公告广告]:</span> <span class="alert">http://115.28.134.125/index.php/app/notice_banner  </span>
+    		 
+			<li>----------------------返回数据----------------------</li>
+			<li>["link"]：广告链接</li>
+			<li>["imgthumb"]：广告图片</li>
+			 
+    <hr>
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b>   [公告-交易所]:</span> <span class="alert">http://115.28.134.125/index.php/app/exchange  </span>
+    		<li>----------------------返回数据----------------------</li>
+			<li>data['cat']交易所信息(bgs_exchange表):
+			</li><li>['ex_name']：交易所名称:</li>
+			<li>["exc_id"]：交易所ID</li>			
+			<li>["excimg"]：交易所图片</li>
+	<hr>
+	
+	
+	
+<span class="zhushi"><b style="color:red;">(已完成)</b> [公告列表]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_notice</span>
+			<li>----------------------请求参数----------------------</li>
+			<li>["exc_id"]：交易所ID</li>
+			<li>["page"]：页码</li>
+			<li>----------------------返回数据----------------------</li>
+			 
+			<li>data['cat']公告所属交易所(bgs_exchange表)
+			</li><li>["exc_name"]：交易所名称</li>	
+			<br>	
+			<li>data['list']公告列表(bgs_notice表):
+			</li><li>["id"]：公告ID</li>
+			<li>["title"]：公告标题</li>		
+			
+    <hr>
+	
+
+<span class="zhushi"><b style="color:red;">(已完成)</b> [公告信息]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_notice_info/$notice_id</span>
+
+			<li>----------------------请求参数----------------------</li>
+			<li>$notice_id：公告ID</li>
+			<li>----------------------返回数据----------------------</li>
+			<li>data['list']公告信息(bgs_notice表):
+			</li><li>['exc_name']：公告所属交易所</li>
+			<li>["title"]：公告名称</li>			
+			<li>["author"]：公告作者</li>
+			<li>["ctime"]：公告创建时间</li>
+			<li>["content"]：公告内容</li>
+			
+    <hr>
+
+
+	
+    <span class="zhushi"><b style="color:red;">(已完成)</b>[活动-全部活动]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_activity  </span>
+			<li>----------------------请求参数----------------------</li>
+			<li>["page"]：第几页</li>
+			<li>----------------------返回数据----------------------</li>
+			<li>["activityid"]：活动id</li>
+			<li>["title"]：活动标题</li>
+			<li>["content"]：活动内容（30字）</li>
+			<li>["num"]：报名人数</li>
+			<li>["starttime"]：活动开始时间</li>
+			<li>["endtime"]：活动结束时间</li>
+			<li>["imgthumb"]：活动图片</li>
+	<hr>
+	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b>[活动-广告]:</span> <span class="alert">http://115.28.134.125/index.php/app/activity_banner  </span>
+		
+			<li>----------------------返回数据----------------------</li>
+			<li>["link"]：广告链接</li>
+			<li>["imgthumb"]：广告图片</li>
+	<hr>
+	
+	
+	
+	
+    <span class="zhushi"><b style="color:red;">(已完成)</b>[活动-我的活动]:</span> <span class="alert">http://115.28.134.125/index.php/app/my_activity  </span>
+			<li>----------------------请求参数----------------------</li>
+			<li>["page"]：第几页</li>
+			<li>----------------------返回数据----------------------</li>
+			<li>["title"]：活动标题</li>
+			<li>["content"]：活动内容（30字）</li>
+			<li>["num"]：报名人数</li>
+			<li>["starttime"]：活动开始时间</li>
+			<li>["endtime"]：活动结束时间</li>
+			<li>["imgthumb"]：活动图片</li>
+    <hr>
+	
+	
+	
+	
+    <span class="zhushi"><b style="color:red;">(已完成)</b> [活动-活动详情]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_activity_info  </span>
+			<li>----------------------请求参数----------------------</li>
+			<li>post aid(活动id)</li>
+			
+			<li>----------------------返回数据----------------------</li>
+			<li>["title"]：活动标题</li>
+			<li>["imgthumb"]：活动宣传图</li>
+			<li>["num"]：活动参与人数</li>
+			<li>["innum"]：活动限制人数</li>
+			<li>["starttime"]：活动开始时间</li>
+			<li>["endtime"]：活动结束时间</li>
+			<li>["content"]：http://115.28.134.125/index.php/app/nos_activity_content/$aid  $aid是活动id </li>
+			<li>["mystatus"]：如果登录成功，显示我的参与状态</li>
+    <hr>
+	
+	
+	
+    <span class="zhushi"><b style="color:red;">(已完成)</b>   [活动-报名]:</span> <span class="alert">http://115.28.134.125/index.php/app/enroll_activity  </span>
+    		<li>----------------------请求参数----------------------</li>
+			<li>["activityid"]：活动ID</li>
+			<li>----------------------返回数据----------------------</li>
+		    <li>
+			["status"]：<br>1 参加成功  <br>-1 缺少参数  <br>  -2 用户已经参加过该活动  <br> -3 活动不存在或者无效  <br> -4 参加活动失败  <br> -5 活动满员  <br>
+				-6 活动未开始  <br>-7 活动已经结束  <br>		
+			</li>
+    <hr>
+	
+	
+	
+	 <span class="zhushi"><b style="color:red;">(已完成)</b>   [个人主页-我的老师]:</span> <span class="alert">http://115.28.134.125/index.php/app/user_teacher_info  </span>
+    		 
+			<li>----------------------返回数据----------------------</li>
+			<li>data['list']公告信息:
+			<br>
+			</li><li>['name']： 教师姓名</li>
+			<li>['userid']： 教师uid</li>
+			<li>['imgthumb']：教师头像</li>		
+			<li>['star']：教师星级</li>		
+			<li>['num']：粉丝人数</li>		
+			<li>['school']：毕业院校</li>
+			<li>['article']：最新文章</li>
+			<li>['articleid']：最新文章的ID</li>		
+    <hr>	
+	
+	
+	 
+	 
+	 
+	 
+	 
+	  <span class="zhushi"><b style="color:red;">(已完成)</b>   [个人主页-退出登录]:</span> <span class="alert">http://115.28.134.125/index.php/app/userexit  </span>
+    		 
+			<li>----------------------返回数据----------------------</li>
+			 <li>
+			["status"]：<br>1 退出登录成功  <br>-1 缺少参数  <br>  -2 用户无效  <br> -3 退出登录失败 
+			</li>		
+    <hr>	
+	
+	
+	
+	
+	
+	
+	
+	
+	 <span class="zhushi"><b style="color:red;">(已完成)</b> [名师列表-排名前三]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_topteacher  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+	  <li>----------------------返回数据----------------------</li>
+			
+			
+			<li>data:
+				<br>&nbsp;&nbsp;&nbsp;username 教师名称 
+				<br>&nbsp;&nbsp;&nbsp;description 教师简介 
+				<br>&nbsp;&nbsp;&nbsp;tid 教师uid 
+				<br>&nbsp;&nbsp;&nbsp;star 教师星级 
+				<br>&nbsp;&nbsp;&nbsp;ex_name 交易所名称 
+				<br>&nbsp;&nbsp;&nbsp;num 粉丝人数 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 教师头像
+				<br>&nbsp;&nbsp;&nbsp;ifattention 1,已关注 0未关注
+			</li>
+			
+    <hr>
+	
+	
+	
+	
+	
+	
+	
+	 <span class="zhushi"><b style="color:red;">(已完成)</b> [名师列表-前三个除外]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_starteacher  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+		
+		<li>----------------------请求参数----------------------</li>
+			<li>["page"]：第几页</li>
+			
+	  <li>----------------------返回数据----------------------</li>
+			
+			
+			<li>data:
+				<br>&nbsp;&nbsp;&nbsp;username 教师名称 
+				<br>&nbsp;&nbsp;&nbsp;description 教师简介 
+				<br>&nbsp;&nbsp;&nbsp;tid 教师uid 
+				<br>&nbsp;&nbsp;&nbsp;star 教师星级 
+				<br>&nbsp;&nbsp;&nbsp;ex_name 交易所名称 
+				<br>&nbsp;&nbsp;&nbsp;num 粉丝人数 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 教师头像
+				<br>&nbsp;&nbsp;&nbsp;ifattention 1,已关注 0未关注
+			</li>
+			
+    <hr>
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [查找老师]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_select_teacher  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+		li&gt;----------------------请求数据----------------------				
+			<li>data:
+				<br>post  token  
+				<br>post  name   
+			</li>
+
+	  <li>----------------------返回数据----------------------</li>				
+			<li>data:
+				<br>&nbsp;&nbsp;&nbsp;username 教师名称 
+				<br>&nbsp;&nbsp;&nbsp;description 教师简介 
+				<br>&nbsp;&nbsp;&nbsp;tid 教师uid 
+				<br>&nbsp;&nbsp;&nbsp;star 教师星级 
+				<br>&nbsp;&nbsp;&nbsp;ex_name 交易所名称 
+				<br>&nbsp;&nbsp;&nbsp;num 粉丝人数 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 教师头像
+				<br>&nbsp;&nbsp;&nbsp;ifattention 1,已关注 0未关注
+			</li>
+			
+    <hr>
+
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [上传用户头像]:</span> <span class="alert">http://60.173.235.34:7777/app/nos_userimage  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+		
+		<li>----------------------请求参数----------------------</li>
+			<li>["userid"]：用户ID</li>
+			<li>["image"]：图片上传16进制数据流(nsdata)</li>
+			
+	  	<li>----------------------返回数据----------------------</li>		
+			若无userid 状态码为0 请先登录
+			若数据流不正确 状态码0 上传头像失败
+			否则 状态码为1 上传成功	返回数据['imgthumb'] 用户头像
+    <hr>
+	
+	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [客服列表]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_getserver  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+		
+		<li>----------------------请求参数----------------------</li>
+			<li>["page"]：第几页</li>
+			
+	  <li>----------------------返回数据----------------------</li>
+			
+			
+			<li>data:
+				<br>&nbsp;&nbsp;&nbsp;username 客服名称 
+				<br>&nbsp;&nbsp;&nbsp;userid 客服uid 
+				<br>&nbsp;&nbsp;&nbsp;star 客服星级 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 客服头像
+				<br>&nbsp;&nbsp;&nbsp;phone 客服手机
+				<br>&nbsp;&nbsp;&nbsp;name 客服真实姓名
+				
+			</li>
+			
+    <hr>
+	
+	
+	
+	
+	
+	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [系统消息-消息列表]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_sysnotice  </span>
+		<div style="color:#FF9E0C;">
+		</div>
+		
+		<li>----------------------请求参数----------------------</li>
+			<li>["page"]：第几页</li>
+			
+	  <li>----------------------返回数据----------------------</li>
+			
+			
+			<li>data:
+				<br>&nbsp;&nbsp;&nbsp;id  
+				<br>&nbsp;&nbsp;&nbsp;title 通知标题 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 图片 
+				<br>&nbsp;&nbsp;&nbsp;ctime 创建时间
+				<br>&nbsp;&nbsp;&nbsp;mtime 修改时间
+			
+			</li>
+			
+    <hr>
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [显示用户信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_userinfo_view</span>
+	<li>----------------------请求参数----------------------</li>
+			<li>post用户的token</li>
+    <li>----------------------返回数据----------------------</li>
+		$data['username'] 用户名
+		$data['name']     真是姓名
+ 		$data['email']    邮箱	
+ 		$data['qq']		  QQ
+ 		$data['sex']      姓名
+	
+	<br><br><br>	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [修改用户信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_userinfo_modi</span>
+	<li>----------------------请求参数----------------------</li>
+			<li>post用户的token</li>
+			<li>$data['username'] 用户名</li>
+ 			<li>$data['email']    邮箱</li>	
+ 			<li>$data['name']     真是姓名</li>
+			<li>$data['sex']      姓名</li>
+    <li>----------------------返回数据----------------------</li>
+	状态码：1 成功 				状态码：0 请求出现错误
+	<br><br><br>	
+	
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [系统消息-消息内容]:</span> <span class="alert">http://115.28.134.125/index.php/app/nos_sysnotice_info/$id  </span>
+	<li>----------------------请求参数----------------------</li>
+			<li>$id ：消息的id</li>
+   
+	
+	
+	<br><br><br>
+	
+	
+	<h1 style="color:blue;"><li>--------------------------------------------老师端--------------------------------------------</li></h1>
+
+	<span class="zhushi"><b style="color:red;">(已经完成)</b> [老师登录]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_login</span>
+	<li>----------------------请求参数----------------------</li>
+    	post参数：phone（手机号为用户名）  userpwd （密码）
+		<br>	密码加密规则：$userpwd = md5(base64_encode(md5($pass)."yykjAwdx"));
+	 
+    	<li>----------------------返回数据----------------------</li>
+    	<li>["status"]  <br>-1 您的用户名或密码不正确<br>1 登录成功<br> 0  修改token失败 <br></li>
+    	<li>data:["uid"]  //用户ID</li>
+    	<li>data:["username"]  //用户昵称</li>
+    	<li>data:["phone"]  //手机号</li>
+    	<li>data:["token"]  //登录令牌</li>
+    	<li>data:["imgthumb"]//用户头像</li>&gt;
+    	<!-- <li>data:["exid"]//交易所ID</li>> -->
+    <br>
+    <hr>
+   
+    <span class="zhushi"><b style="color:red;">(已完成)</b> [更换老师背景图片]:</span> 
+    <span class="alert">http://60.173.235.34:7777/app/nos_teacher_backgoundimg</span>
+		<div style="color:#FF9E0C;">
+		</div>
+		
+		<li>----------------------请求参数----------------------</li>
+			<li>token </li>
+			<li>["image"]：图片上传16进制数据流(nsdata)</li>
+			
+	  	<li>----------------------返回数据----------------------</li>		
+			若无token 状态码为0 请先登录
+			若数据流不正确 状态码0 上传失败
+			否则 状态码为1 上传成功	返回数据['backgroundimg'] 个人背景图片
+    <hr>
+
+    <span class="zhushi"><b style="color:red;">(已完成)</b> [更换老师头像]:</span> 
+    <span class="alert">http://60.173.235.34:7777/app/nos_teacher_headimg</span>
+		<div style="color:#FF9E0C;">
+		</div>
+		
+		<li>----------------------请求参数----------------------</li>
+			<li>token </li>
+			<li>["image"]：图片上传16进制数据流(nsdata)</li>
+			
+	  	<li>----------------------返回数据----------------------</li>		
+			若无token 状态码为0 请先登录
+			若数据流不正确 状态码0 上传失败
+			否则 状态码为1 上传成功	返回数据['imgthumb'] 老师头像图片
+    <hr>
+
+    <span class="zhushi"><b style="color:red;">(已完成)</b> [更换老师发表文章图片]:</span> 
+    <span class="alert">http://60.173.235.34:7777/app/nos_uploadarticleimg</span>
+	<div style="color:#FF9E0C;">
+		</div>
+		<li>----------------------请求参数----------------------</li>
+			<li>articleid   文章的ID</li>
+			<li>["image"]：图片上传16进制数据流(nsdata)</li>
+			
+	  	<li>----------------------返回数据----------------------</li>		
+			若无["image"]  状态码为0 没有图片上传
+			若无articleid  则为新发布的文章添加的图片 返回图片的URL
+			若有articleid  则为更改已经发布文章的图片 返回图片的URL
+    <hr>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [个人界面老师信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_personal</span>
+	<li>----------------------请求参数----------------------</li>
+			<li>post用户的token</li>
+    <li>----------------------返回数据----------------------</li>
+		<li>$data['username'] 	 用户名</li>
+		<li>$data['imgthumb']	 头像</li>
+ 		<li>$data['description'] 个人简介</li>
+ 		<li>$data['backgroundimg'] 个人背景图片</li>
+	<br><br><br>
+
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [修改时显示老师信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_view</span>
+	<li>----------------------请求参数----------------------</li>
+			<li>post用户的token</li>
+    <li>----------------------返回数据----------------------</li>
+		<li>$data['username'] 	 用户名</li>
+		<li>$data['name']     	 真实姓名</li>
+		<li>$data['sex']      	 性别</li>
+ 		<li>$data['email']    	 邮箱</li>
+ 		<li>$data['qq']		  	 QQ</li>
+ 		<li>$data['school']   	 毕业学校</li>	
+ 		<li>$data['goodat']   	 老师擅长项目集合(数组)</li>
+ 		<li>$data['description'] 个人简介</li>
+ 		<li>$data['exid']  	     所在交易所ID</li>
+		<br>
+ 		<li>$data['specialty']    所有擅长项目集合(数组：id 项目名称)</li>
+ 		<!-- <li>$data['exchange']     所有交易所集合(数组：id 交易所名称)</li> -->
+	<br><br><br>
+
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [修改老师信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_modi</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+		<li>['username'] 用户名</li>
+		<li>['name']     真实姓名</li>
+		<li>['imgthumb']     头像</li>
+		<li>['sex']      性别</li>
+ 		<li>['email']    邮箱</li>	
+ 		<li>['qq']		 QQ</li>
+ 		<li>['school']   毕业学校</li>	
+ 		<li>['goodat']   擅长项目</li><li>
+ 		</li><li>['description']   个人简介</li>
+    <li>----------------------返回数据----------------------</li>
+		状态码：1 成功 	状态码：0 请求出现错误   状态码：-1 未登录
+ 		
+	<br><br><br>
+	
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [点击信息发布--准备的相关信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_Prerelease</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+    <li>----------------------返回数据----------------------</li>
+		<li>$data['exchange'] 	交易所信息</li>
+		<li>$data['ex_name']['ex_classid']  所属品种id</li>
+		<li>$data['ex_name']['ex_class']    所属品种</li>
+
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [接收老师的发布文章信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_release</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+		<li>['title'] 		文章标题</li>
+		<li>['content']     文章内容</li>
+		<li>['imgthumb']    文章的图片</li>
+ 		<li>['ctgy']    	所属交易所发布类型</li>	
+ 		
+
+
+    <li>----------------------返回数据----------------------</li>
+	状态码：1 发布成功 	状态码：0 请求出现错误   状态码：-1 未登录
+	<br><br><br>
+
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [显示老师发布的所有文章]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_allarticle</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+		<li>post用户的page 页码</li>
+    <li>----------------------返回数据----------------------</li>
+    
+    	<li>$data   未通过审核的文章(数组)</li>	
+    	<li>['id'] 			文章id</li>
+    	<li>['about'] 		文章简介</li>
+    	<li>['hits'] 		文章点赞数量</li>
+		<li>['title'] 		文章标题</li>
+		<li>['content']     文章内容</li>
+		<li>['imgthumb']    文章的图片</li>
+ 		<li>['ctime']    	创建时间</li>
+ 		<li>['ctgy'] 		当前文章所属分类</li>
+ 		<li>['ctgyid'] 		当前文章所属分类id</li>
+ 		<li>['status']    	1通过,0未通过</li>	
+ 		<li>['reason'] 		文章未通过的原因</li>	
+	<br><br>
+	
+
+	<li>----------------------返回数据----------------------</li>
+	状态码：1 发布成功 	状态码：0 请求出现错误   状态码：-1 未登录
+	<br><br><br>
+
+<span class="zhushi"><b style="color:red;">(已完成)</b> [修改已经发布的文章信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_modi_article</span>（已经作废）
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+		<li>post 文章id articleid </li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data['articleinfo']文章信息</li>
+    	<li>['id'] 			文章id</li>
+    	<li>['title'] 		文章标题</li>
+    	<li>['content'] 	文章Email</li>
+		<li>['imgthumb']    文章图像</li>
+		<li>['ex_name'] 	所属交易所</li>
+		<li>['ctgy'] 		当前文章所属分类</li>
+		<li>['ctgyid'] 		当前文章所属分类id</li>
+		<br>
+		<li>$data['ctgy']   交易所下的分类集合(数组) </li>
+		<li>['ctgyid'] 	    交易所下的分类id</li>
+		<li>['ctgyname'] 	交易所下的分类名称</li>
+	<br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [提交文章修改信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_submitmodi</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+		<li>post 文章id articleid </li>
+    	<li>['title'] 	 文章标题</li>
+    	<li>['content']  文章Email</li>
+		<li>['imgthumb'] 文章图像</li>
+		<li>['ctgyid']     交易所下的所属分类id(例如：白银，股票等)</li>
+    <li>----------------------返回数据----------------------</li>
+    状态码：1 修改成功 	状态码：0 修改失败   状态码：-1 未登录	
+	<br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [老师的客户]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_consumer</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post用户的token</li>
+		<li>post 页码 page </li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data['consumer']  粉丝信息</li>
+    	<li>['id'] 			粉丝id</li>
+    	<li>['username'] 	粉丝姓名</li>
+    	<li>['email'] 		粉丝Email</li>
+		<li>['qq'] 			粉丝qq</li>
+		<li>['imgthumb']    粉丝图像</li>
+	<br><br><br>
+	
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [查看客户信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_seefan</span><span style="color:red;">已废除</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post 老师的token</li>
+		<li>post userid  粉丝id </li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data  粉丝信息</li>
+    	<li>['id'] 			粉丝id</li>
+    	<li>['username'] 	粉丝姓名</li>
+    	<li>['email'] 		粉丝Email</li>
+		<li>['qq'] 			粉丝qq</li>
+		<li>['imgthumb']    粉丝图像</li>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [首页所有交易所]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_index</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>无</li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data[]			交易所信息(数组)</li>
+    	<li>data:["banner"] 数组 : 
+				<br>&nbsp;&nbsp;&nbsp;link 跳转地址可空 
+				<br>&nbsp;&nbsp;&nbsp;imgthumb 图片地址 
+			</li>
+		<li>data:["exchangeinfo"]</li>
+    	<li>['id'] 			交易所id</li>
+    	<li>['ex_name'] 	交易所名</li>
+		<li>['excimg']      交易所图像</li>
+	<br><br><br>
+		
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [首页交易所信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_teacher_exchangeinfo</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post excid 交易所id</li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data			交易所信息</li>
+    	<li>['id'] 			交易所id</li>
+    	<li>['ex_name'] 	交易所名</li>
+    	<li>['exc_information'] 交易所简介</li>
+		<li>['excimg']      交易所图像</li>
+		<li>['exchcft']	    认证信息(数组：认证名)</li>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [关于我们]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_aboutus</span>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [首页交易所信息]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_chatinfo</span>
+	<li>----------------------请求参数----------------------</li>
+		<li>post userid </li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data			用户信息</li>
+    	<li>['username'] 	用户昵称</li>
+    	<li>['imgthumb'] 	用户头像</li>
+	<br><br><br>
+
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [所有的老师]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_allteacher_info</span>
+	<br><br><br>
+	<li>----------------------请求参数----------------------</li>
+		<li>post page </li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>$data			教师信息</li>
+    	<li>['userid'] 		教师ID</li>
+    	<li>['name'] 		教师昵称</li>
+    	<li>['imgthumb'] 	教师头像</li>
+    	<li>['num'] 		粉丝数量</li>
+    	<li>['star'] 		教师星级</li>
+    	<li>['school'] 		毕业院校</li>
+    	<li>['articleid'] 	最新文章ID</li>
+    	<li>['article'] 	最新文章名称</li>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [发送注册验证码]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_sendyzm</span>
+	<br><br><br>
+	<li>----------------------请求参数----------------------</li>
+		<li>post phone 手机号</li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>状态码1 成功返回空</li>
+    	<li>状态码0 失败返回空</li>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [开始注册  用户/教师]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_reg</span>
+	<br><br><br>
+	<li>----------------------请求参数----------------------</li>
+		<li>post phone  	手机号</li>
+		<li>post yzm    	验证码</li>
+		<li>post passwd  	设置密码</li>
+		<li>post repasswd   重复的密码</li>
+		*************<li>post type 		用户注册的类型：1为用户注册，2为教师注册</li>*************
+    <li>----------------------返回数据----------------------</li>
+    	<li>状态码1  成功返回空</li>
+    	<li>状态码0  失败返回空</li>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [发送找回密码验证码]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_sendzhyzm</span>
+	<br><br><br>
+	<li>----------------------请求参数----------------------</li>
+		<li>post phone 手机号</li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>状态码1 成功返回空</li>
+    	<li>状态码0 失败返回空</li>
+	<br><br><br>
+
+	<span class="zhushi"><b style="color:red;">(已完成)</b> [开始找回密码  用户/教师]:</span>
+	<span class="alert">http://115.28.134.125/index.php/app/nos_getpwd</span>
+	<br><br><br>
+	<li>----------------------请求参数----------------------</li>
+		<li>post phone  	手机号</li>
+		<li>post yzm    	验证码</li>
+		<li>post passwd  	设置密码</li>
+		<li>post repasswd   重复密码</li>
+    <li>----------------------返回数据----------------------</li>
+    	<li>状态码1  成功返回空</li>
+    	<li>状态码0  失败返回空</li>
+	<br><br><br>
+
+
+
+</body></html>

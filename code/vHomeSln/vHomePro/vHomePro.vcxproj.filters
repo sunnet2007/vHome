@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{827da038-2083-4bba-9e3a-448f53558f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DAL">
+      <UniqueIdentifier>{76bf5abe-35aa-4eee-b05e-f812c1c68ee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Common">
+      <UniqueIdentifier>{78b164c1-db08-4f02-9467-c40f5e56799f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{059959f8-0f33-4ac3-8df7-42a7b7814627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\HeaderFile">
+      <UniqueIdentifier>{159af6ec-1e77-4663-b3ff-fde0604534b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\SourceFile">
+      <UniqueIdentifier>{384330a1-14e4-44b8-9fba-433606ea2378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\HeaderFile">
+      <UniqueIdentifier>{28217b45-7821-4a0d-b610-a940607e70a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\SourceFile">
+      <UniqueIdentifier>{9b04a1f2-68f5-43f6-a6f7-38f79c0a7ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DAL\HeaderFile">
+      <UniqueIdentifier>{cc787eb7-dd39-44f5-8baa-b114a765afca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DAL\SourceFile">
+      <UniqueIdentifier>{3f771706-a63d-4c63-a26f-8bf50637fe2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\UIFile">
+      <UniqueIdentifier>{362b9211-15da-41d4-8e07-f2152d7e1870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{dd5b27d7-f6e2-4ad1-8d41-19b0aea09745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{c49748ef-b9b6-4d1d-ad02-87778b716fee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{a5dfb4bf-dddf-47f3-a374-b4f4abd423d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp">
+      <UniqueIdentifier>{0c848629-6818-4557-b97a-6f7ca58fe4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Network">
+      <UniqueIdentifier>{cd116444-8047-4bbe-a504-071e6281fa42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\tinyxml">
+      <UniqueIdentifier>{f43db556-b2cf-4d2d-8833-9f3f8df4d66b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Utility">
+      <UniqueIdentifier>{256cb8de-4d97-4f82-830f-9910499ea6cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Database">
+      <UniqueIdentifier>{e67873fc-c545-4c72-b925-45052dcf244d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp\include">
+      <UniqueIdentifier>{f15175d3-b5d9-4ea3-8bb0-518cc3cfc61a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp\json">
+      <UniqueIdentifier>{ea7bcb4e-601f-43ce-afdd-9734ed704121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp\source">
+      <UniqueIdentifier>{db38ebba-f7ff-43e3-bbed-159dc5dbba6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BLL">
+      <UniqueIdentifier>{80711f82-d677-49c8-befd-fbc5a5566644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BLL\HeaderFile">
+      <UniqueIdentifier>{d28fe97d-a1fc-4c64-914a-60eadbc361f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BLL\SourceFile">
+      <UniqueIdentifier>{e56dc18c-9cc5-4070-b563-ce33c81e280d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="duilib.h">
+      <Filter>UI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowInfoWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="AnayListUI.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="UserManagerLogic.h">
+      <Filter>BLL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Article.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="UserDao.h">
+      <Filter>DAL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\Base64.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\CommFuns.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\CrossPlatform.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\Lock.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\Log.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\Md5.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\StringFuns.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\thread.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Network\HttpClient.h">
+      <Filter>Common\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Network\HttpMsg.h">
+      <Filter>Common\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Network\NetAddr.h">
+      <Filter>Common\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Network\Sock.h">
+      <Filter>Common\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Network\stdafx.h">
+      <Filter>Common\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json_batchallocator.h">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\JsonInterface.h">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\source\json_batchallocator.h">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\autolink.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\config.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\features.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\forwards.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\json.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\reader.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\value.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\writer.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\autolink.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\config.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\features.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\forwards.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\reader.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\value.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\writer.h">
+      <Filter>Common\Jsoncpp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterInfo.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeDao.h">
+      <Filter>DAL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Exchange.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeLogic.h">
+      <Filter>BLL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Banner.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\tinyxml\tinystr.h">
+      <Filter>Common\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\tinyxml\tinyxml.h">
+      <Filter>Common\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="AppConfig.h">
+      <Filter>DAL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ExTeacherListUI.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="TeacherDao.h">
+      <Filter>DAL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Auth.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ResMsg.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="TeacherLogic.h">
+      <Filter>BLL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="CareListUI.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutWnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppMain.cpp" />
+    <ClCompile Include="HomeWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Article.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowInfoWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtil.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="AnayListUI.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="UserManagerLogic.cpp">
+      <Filter>BLL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="UserDao.cpp">
+      <Filter>DAL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\Base64.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\CommFuns.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\CrossPlatform.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\Log.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\Md5.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\StringFuns.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Network\HttpClient.cpp">
+      <Filter>Common\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Network\HttpMsg.cpp">
+      <Filter>Common\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Network\NetAddr.cpp">
+      <Filter>Common\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Network\Sock.cpp">
+      <Filter>Common\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\json_reader.cpp">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\json_value.cpp">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\json_writer.cpp">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\source\json_reader.cpp">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\source\json_value.cpp">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\source\json_writer.cpp">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </ClCompile>
+    <ClCompile Include="RegisterInfo.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeDao.cpp">
+      <Filter>DAL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Exchange.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="ExchangeLogic.cpp">
+      <Filter>BLL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Banner.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\tinyxml\tinystr.cpp">
+      <Filter>Common\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\tinyxml\tinyxml.cpp">
+      <Filter>Common\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\tinyxml\tinyxmlerror.cpp">
+      <Filter>Common\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\tinyxml\tinyxmlparser.cpp">
+      <Filter>Common\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="AppConfig.cpp">
+      <Filter>DAL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ExTeacherListUI.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="TeacherDao.cpp">
+      <Filter>DAL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ResMsg.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Auth.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="TeacherLogic.cpp">
+      <Filter>BLL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="CareListUI.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutWnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="UIFile\LoginWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\MenuWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\PersonSettingWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\RegisterWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ShowInfoWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\AnayList.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\SearchWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\HomeWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ExTeacherList.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\CareList.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\TeacherList.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UIFile\index.htm">
+      <Filter>UI\UIFile</Filter>
+    </None>
+    <None Include="UIFile\app.config">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\json_internalarray.inl">
+      <Filter>Common\Jsoncpp</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\json_internalmap.inl">
+      <Filter>Common\Jsoncpp</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\json_valueiterator.inl">
+      <Filter>Common\Jsoncpp</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\sconscript">
+      <Filter>Common\Jsoncpp</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\source\json_internalarray.inl">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\source\json_internalmap.inl">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </None>
+    <None Include="Common\Jsoncpp\source\json_valueiterator.inl">
+      <Filter>Common\Jsoncpp\source</Filter>
+    </None>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="vHomePro.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

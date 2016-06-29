@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C073235-6579-4475-88E2-F88DA8900929}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>vHomePro</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\vsspace\DuiLib_Redrain-master\DuiLib;Common\Jsoncpp;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\vsspace\DuiLib_Redrain-master\Lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\Common\Jsoncpp;E:\vsspace\DuiLib_Redrain-master\DuiLib;..\Common\Utility;..\Common\Network;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\vsspace\DuiLib_Redrain-master\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutWnd.cpp" />
+    <ClCompile Include="AnayListUI.cpp" />
+    <ClCompile Include="AppConfig.cpp" />
+    <ClCompile Include="AppMain.cpp" />
+    <ClCompile Include="Article.cpp" />
+    <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="Banner.cpp" />
+    <ClCompile Include="CareListUI.cpp" />
+    <ClCompile Include="Common\Jsoncpp\json_reader.cpp" />
+    <ClCompile Include="Common\Jsoncpp\json_value.cpp" />
+    <ClCompile Include="Common\Jsoncpp\json_writer.cpp" />
+    <ClCompile Include="Common\Jsoncpp\source\json_reader.cpp" />
+    <ClCompile Include="Common\Jsoncpp\source\json_value.cpp" />
+    <ClCompile Include="Common\Jsoncpp\source\json_writer.cpp" />
+    <ClCompile Include="Common\Network\HttpClient.cpp" />
+    <ClCompile Include="Common\Network\HttpMsg.cpp" />
+    <ClCompile Include="Common\Network\NetAddr.cpp" />
+    <ClCompile Include="Common\Network\Sock.cpp" />
+    <ClCompile Include="Common\tinyxml\tinystr.cpp" />
+    <ClCompile Include="Common\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="Common\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="Common\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="Common\Utility\Base64.cpp" />
+    <ClCompile Include="Common\Utility\CommFuns.cpp" />
+    <ClCompile Include="Common\Utility\CrossPlatform.cpp" />
+    <ClCompile Include="Common\Utility\Log.cpp" />
+    <ClCompile Include="Common\Utility\Md5.cpp" />
+    <ClCompile Include="Common\Utility\StringFuns.cpp" />
+    <ClCompile Include="Exchange.cpp" />
+    <ClCompile Include="ExchangeDao.cpp" />
+    <ClCompile Include="ExchangeLogic.cpp" />
+    <ClCompile Include="ExTeacherListUI.cpp" />
+    <ClCompile Include="HomeWnd.cpp" />
+    <ClCompile Include="LoginWnd.cpp" />
+    <ClCompile Include="RegisterInfo.cpp" />
+    <ClCompile Include="RegisterWnd.cpp" />
+    <ClCompile Include="ResMsg.cpp" />
+    <ClCompile Include="SearchWnd.cpp" />
+    <ClCompile Include="ShowInfoWnd.cpp" />
+    <ClCompile Include="StringUtil.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="TeacherDao.cpp" />
+    <ClCompile Include="TeacherLogic.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserDao.cpp" />
+    <ClCompile Include="UserManagerLogic.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutWnd.h" />
+    <ClInclude Include="AnayListUI.h" />
+    <ClInclude Include="AppConfig.h" />
+    <ClInclude Include="Article.h" />
+    <ClInclude Include="Auth.h" />
+    <ClInclude Include="Banner.h" />
+    <ClInclude Include="CareListUI.h" />
+    <ClInclude Include="Common\Jsoncpp\include\autolink.h" />
+    <ClInclude Include="Common\Jsoncpp\include\config.h" />
+    <ClInclude Include="Common\Jsoncpp\include\features.h" />
+    <ClInclude Include="Common\Jsoncpp\include\forwards.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json.h" />
+    <ClInclude Include="Common\Jsoncpp\include\reader.h" />
+    <ClInclude Include="Common\Jsoncpp\include\value.h" />
+    <ClInclude Include="Common\Jsoncpp\include\writer.h" />
+    <ClInclude Include="Common\Jsoncpp\JsonInterface.h" />
+    <ClInclude Include="Common\Jsoncpp\json\autolink.h" />
+    <ClInclude Include="Common\Jsoncpp\json\config.h" />
+    <ClInclude Include="Common\Jsoncpp\json\features.h" />
+    <ClInclude Include="Common\Jsoncpp\json\forwards.h" />
+    <ClInclude Include="Common\Jsoncpp\json\json.h" />
+    <ClInclude Include="Common\Jsoncpp\json\reader.h" />
+    <ClInclude Include="Common\Jsoncpp\json\value.h" />
+    <ClInclude Include="Common\Jsoncpp\json\writer.h" />
+    <ClInclude Include="Common\Jsoncpp\json_batchallocator.h" />
+    <ClInclude Include="Common\Jsoncpp\source\json_batchallocator.h" />
+    <ClInclude Include="Common\Network\HttpClient.h" />
+    <ClInclude Include="Common\Network\HttpMsg.h" />
+    <ClInclude Include="Common\Network\NetAddr.h" />
+    <ClInclude Include="Common\Network\Sock.h" />
+    <ClInclude Include="Common\Network\stdafx.h" />
+    <ClInclude Include="Common\tinyxml\tinystr.h" />
+    <ClInclude Include="Common\tinyxml\tinyxml.h" />
+    <ClInclude Include="Common\Utility\Base64.h" />
+    <ClInclude Include="Common\Utility\CommFuns.h" />
+    <ClInclude Include="Common\Utility\CrossPlatform.h" />
+    <ClInclude Include="Common\Utility\Lock.h" />
+    <ClInclude Include="Common\Utility\Log.h" />
+    <ClInclude Include="Common\Utility\Md5.h" />
+    <ClInclude Include="Common\Utility\StringFuns.h" />
+    <ClInclude Include="Common\Utility\thread.h" />
+    <ClInclude Include="duilib.h" />
+    <ClInclude Include="Exchange.h" />
+    <ClInclude Include="ExchangeDao.h" />
+    <ClInclude Include="ExchangeLogic.h" />
+    <ClInclude Include="ExTeacherListUI.h" />
+    <ClInclude Include="HomeWnd.h" />
+    <ClInclude Include="LoginWnd.h" />
+    <ClInclude Include="RegisterInfo.h" />
+    <ClInclude Include="RegisterWnd.h" />
+    <ClInclude Include="ResMsg.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SearchWnd.h" />
+    <ClInclude Include="ShowInfoWnd.h" />
+    <ClInclude Include="StringUtil.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
+    <ClInclude Include="TeacherDao.h" />
+    <ClInclude Include="TeacherLogic.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UserDao.h" />
+    <ClInclude Include="UserManagerLogic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="UIFile\AnayList.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\CareList.xml" />
+    <Xml Include="UIFile\ExTeacherList.xml" />
+    <Xml Include="UIFile\HomeWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\LoginWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\MenuWnd.xml" />
+    <Xml Include="UIFile\PersonSettingWnd.xml" />
+    <Xml Include="UIFile\RegisterWnd.xml" />
+    <Xml Include="UIFile\SearchWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\ShowInfoWnd.xml" />
+    <Xml Include="UIFile\TeacherList.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Common\Jsoncpp\json_internalarray.inl" />
+    <None Include="Common\Jsoncpp\json_internalmap.inl" />
+    <None Include="Common\Jsoncpp\json_valueiterator.inl" />
+    <None Include="Common\Jsoncpp\sconscript" />
+    <None Include="Common\Jsoncpp\source\json_internalarray.inl" />
+    <None Include="Common\Jsoncpp\source\json_internalmap.inl" />
+    <None Include="Common\Jsoncpp\source\json_valueiterator.inl" />
+    <None Include="UIFile\app.config" />
+    <None Include="UIFile\index.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="vHomePro.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

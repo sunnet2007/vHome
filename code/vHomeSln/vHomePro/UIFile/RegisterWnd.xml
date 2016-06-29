@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="521,396" caption="0,0,0,35">
+  <Font id="0" name="微软雅黑" size="13" blod="true"/>
+  <VerticalLayout bkimage="file='bk_register.png' " fade="true">
+    <HorizontalLayout height="35">
+      <Label bkimage="name.png" float ="true" pos="15,10,0,0" width="54" height="15"/>
+      <VerticalLayout />
+      <VerticalLayout width="50" fade="true">
+        <Button name="btnMin" tooltip="最小化" float="true" pos="0,0,0,0"  width="23" height="29" normalimage="min_nor.png" hotimage="min_hot.png"/>
+        <Button name="btnClose" tooltip="关闭" float="true" pos="23,0,0,0" width="27" height="29" normalimage="close_normal.png" hotimage="close_hot.png"/>
+      </VerticalLayout>
+    </HorizontalLayout>
+    <HorizontalLayout height="120">
+      <Label bkimage="banner.jpg" />
+    </HorizontalLayout>
+    <HorizontalLayout >
+      <Edit name="editPhone" float="true" pos="40,10,0,0" width="449" height="46" font="0" textcolor="#FF000000" tipvalue="请输入您的手机号码" bkimage="top_normal.png" />
+      
+      <Label float="true" pos="40,56,0,0" width="449" height="46" bkimage="mid_normal.png" />
+      <Edit name="editCode"  float="true" pos="42,57,0,0" width="349" height="40" font="0" textcolor="#FF000000" tipvalue="请输入验证码" />
+      <Button name="btnSend" float="true" pos="390,65,0,0" width="82" height="28" bkimage="sendcode_normal.png" />
+      
+      <Edit name="editPassword"  password="true" float="true" pos="40,102,0,0" width="449" height="46" font="0" textcolor="#FF000000" tipvalue="请输入您的账户密码" bkimage="mid_normal.png"/>
+
+      <Edit name="editRePassword" password="true" float="true" pos="40,148,0,0" width="449" height="46" font="0" textcolor="#FF000000" tipvalue="确定密码" bkimage="bottom_normal.png" />
+      
+      <Button name="btnReg"  float="true" pos="374,195,0,0" width="111" height="32" bkimage="reg_normal.png"/>
+     
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

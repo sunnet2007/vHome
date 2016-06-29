@@ -1,0 +1,1 @@
+http://36.7.110.253:9999/beegs/app/nos_apiimpl
