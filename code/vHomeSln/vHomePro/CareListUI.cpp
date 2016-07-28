@@ -28,10 +28,10 @@ void CCareListUI::DoEvent(TEventUI& event)
 	return __super::DoEvent(event);
 }
 
-bool CCareListUI::SelectItem(int iIndex, bool bTakeFocus  = false )
-{
-	return true;
-}
+//bool CCareListUI::SelectItem(int iIndex, bool bTakeFocus  = false )
+//{
+//	return true;
+//}
 
 
 bool CCareListUI::AddItem(const CTeacher& teacher)
@@ -52,49 +52,57 @@ bool CCareListUI::AddItem(const CTeacher& teacher)
 		return false;
 	}
 	// 将ID与列表项绑定
-	char cId[32];
-	memset(cId, 0,32);
-	itoa(teacher.GetUid(), cId, 10);
-	TCHAR tcId[32];
-	memset(tcId, 0, 32);
-	CharToTchar(cId, tcId);
-	pListElement->SetUserData(tcId);
+	CDuiString strId;
+	strId.Format(_T("%d"), teacher.GetUid());
+	pListElement->SetUserData(strId);
 
 	// 讲师头像
 	CLabelUI* pLabelImg = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pListElement, _T("labelImg")));
 	if (pLabelImg != NULL)
 	{
-		//string strBkImage = "image_" + 
-		char cBkImage[64];
-		memset(cBkImage, 0, 64);
-		sprintf_s(cBkImage, 64, "teacherimage_%d.png", teacher.GetUid());
-
-		TCHAR tcBkImage[64];
-		memset(tcBkImage, 0, 64);
-		CharToTchar(cBkImage, tcBkImage);
-		pLabelImg->SetBkImage(tcBkImage);
+		string strImg = teacher.GetImgThumb();
+		wstring wstrImg = s2ws(strImg); 
+		pLabelImg->SetBkImage(wstrImg.c_str());
 	}
 
 	// 讲师名字
 	CLabelUI* pLabelName =static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pListElement, _T("labelName")));
 	if (pLabelName != NULL)
 	{
-		TCHAR tcName[512];
-		memset(tcName, 0, 512);
-		CharToTchar(teacher.GetName().c_str(), tcName);
-		pLabelName->SetText(tcName);
+		wstring wstr = s2ws(teacher.GetName());
+		pLabelName->SetText(wstr.c_str());
 	}
 
 	// 个性签名
 	CLabelUI* pLabelSign = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pListElement, _T("labelSign")));
 	if (pLabelSign != NULL)
 	{
-		TCHAR tcName[512];
-		memset(tcName, 0, 512);
-		CharToTchar(teacher.GetName().c_str(), tcName);
-		pLabelSign->SetText(tcName);
-		pLabelSign->SetVisible(false);
+		wstring wstr = s2ws(teacher.GetDesc());
+		pLabelSign->SetText(wstr.c_str());
+		//pLabelSign->SetVisible(false);
 	}
+
+	CVerticalLayoutUI* pVLayout = static_cast<CVerticalLayoutUI*>(m_paintManager.FindSubControlByName(pListElement, _T("vLayout")));
+	if (pVLayout)
+	{
+		// 讲师星级
+		int nStars = teacher.GetStar();
+		for (int i = 0; i < nStars; i++)
+		{
+			CLabelUI* pLabelStar = new CLabelUI;
+			pLabelStar->SetAttribute(_T("float"), _T("true"));
+			CDuiString strPos;
+			strPos.Format(_T("%d,10,0,0"), 160+(i*15));
+			pLabelStar->SetAttribute(_T("pos"), strPos);
+			pLabelStar->SetAttribute(_T("width"), _T("13"));
+			pLabelStar->SetAttribute(_T("height"), _T("13"));
+			pLabelStar->SetAttribute(_T("bkimage"), _T("file='lightstart.png' source='0,3,13,16'"));
+			pVLayout->Add(pLabelStar);
+
+			//pVLayout->AddAt(pLabelStar, i+2);
+		}
+	}
+
 
 	//// 认证 TODO:根据数量动态添加
 	//CLabelUI* pLabelTag1 = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pListElement, _T("labelTag1")));

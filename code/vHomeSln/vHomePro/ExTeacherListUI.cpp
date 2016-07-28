@@ -19,41 +19,67 @@ void CExTeacherListUI::AddItem(const CTeacher& teacher)
 	CDialogBuilder builder;
 	CContainerUI* pTeacherUI = static_cast<CContainerUI*>(builder.Create(_T("ExTeacherList.xml"), (UINT)0));
 	if( pTeacherUI != NULL ) {
-			if( pTeacherUI == NULL ) pTeacherUI = static_cast<CContainerUI*>(builder.Create());
-			if( pTeacherUI != NULL ) {
-				this->Add(pTeacherUI);
-				CLabelUI* pLabelImg = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pTeacherUI, _T("labelImg")));
-				char cBkImage[32];
-				memset(cBkImage, 0, 32);
-				sprintf_s(cBkImage, 32, "teacherimage_%d.png", teacher.GetUid());
+		if( pTeacherUI == NULL ) pTeacherUI = static_cast<CContainerUI*>(builder.Create());
+		if( pTeacherUI != NULL ) {
+			this->Add(pTeacherUI);
+			CLabelUI* pLabelImg = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pTeacherUI, _T("labelImg")));
+			if (pLabelImg)
+			{
+				//CDuiString strImg;
+				//strImg.Format(_T("teacherimage_%d.png"), teacher.GetUid());
+				//pLabelImg->SetBkImage(strImg);
 
-				TCHAR tcBkImage[32];
-				memset(tcBkImage, 0, 32);
-				CharToTchar(cBkImage, tcBkImage);
-				pLabelImg->SetBkImage(tcBkImage);
-
-				CLabelUI* pLabelName = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pTeacherUI, _T("labelName")));
-				TCHAR tcName[32];
-				memset(tcName, 0, 32);
-				CharToTchar(teacher.GetName().c_str(), tcName);
-				pLabelName->SetText(tcName);
-
-				// 将ID与列表项绑定
-				char cId[32];
-				memset(cId, 0,32);
-				itoa(teacher.GetUid(), cId, 10);
-				TCHAR tcId[32];
-				memset(tcId, 0, 32);
-				CharToTchar(cId, tcId);
-				pTeacherUI->SetUserData(tcId);
-
-
-				pTeacherUI = NULL;
+				string strImg = teacher.GetImgThumb();
+				wstring wstrImg = s2ws(strImg); 
+				pLabelImg->SetBkImage(wstrImg.c_str());
 			}
-			else {
-				this->RemoveAll();
-				return;
+
+			CLabelUI* pLabelName = static_cast<CLabelUI*>(m_paintManager.FindSubControlByName(pTeacherUI, _T("labelName")));
+			if (pLabelName)
+			{
+				wstring wstrName = s2ws(teacher.GetName());
+				pLabelName->SetText(wstrName.c_str());
 			}
+			
+			CButtonUI* pButton = static_cast<CButtonUI*>(m_paintManager.FindSubControlByName(pTeacherUI, _T("btnCare")));
+			if (pButton)
+			{
+				int nIfAddtention = teacher.GetIfAttention();
+				if (nIfAddtention ==1) // 已经关注
+					pButton->SetText(_T("取消关注"));
+				else 
+					pButton->SetText(_T("关注"));
+
+			}
+
+
+			CDuiString strId;
+			strId.Format(_T("%d"), teacher.GetUid());
+			pTeacherUI->SetUserData(strId);
+
+			int nStar = teacher.GetStar();
+			CContainerUI* pContainer = static_cast<CContainerUI*>(m_paintManager.FindSubControlByName(pTeacherUI, _T("container")));
+			for (int i = 0; i < nStar; i++)
+			{
+				CLabelUI* pLabelStar = new CLabelUI;
+				pLabelStar->SetAttribute(_T("float"), _T("true"));
+				CDuiString strPos;
+				strPos.Format(_T("%d,%d,%d,%d"), 70+13*i, 30, 70+13*(i+1),43);
+				pLabelStar->SetAttribute(_T("pos"),strPos);
+				pLabelStar->SetBkImage(_T("file='lightstart.png' source='0,3,13,16'"));
+				if (pContainer)
+				{
+					pContainer->AddAt(pLabelStar, 2+i);
+				}
+
+			}
+
+			pTeacherUI = NULL;
+		}
+		else {
+			this->RemoveAll();
+			return;
+		}
 	}
 }
 

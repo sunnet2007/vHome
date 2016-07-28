@@ -18,11 +18,14 @@ public:
 
 public:
 	// 获取交易所信息列表
-	int GetAllExchanges(vector<CExchange>& vecExchange, vector<CBanner>& vecBanner, CResMsg& msg);
+	int GetAllExchanges(const string& strToken, vector<CExchange>& vecExchange, vector<CBanner>& vecBanner, CResMsg& msg);
 	// 获取交易所讲师列表
 	int GetTeacherListByExid(vector<CTeacher>& vecTeacher,int nExid, const string& strToken, CResMsg& msg);
 	// 根据ID获取交易所信息
 	int GetExchangeInfoById(CExchange& exchange, CResMsg& msg);
+
+	// 讲师首页交易所信息
+	int GetExchanges(vector<CExchange>& vecExchange, CResMsg& msg);
 
 
 private:

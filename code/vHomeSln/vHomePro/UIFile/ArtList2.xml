@@ -1,0 +1,33 @@
+<!--<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <Font id="0" name="微软雅黑" size="20" bold="true" />
+  <ListContainerElement height="85" menu="false">
+    <VerticalLayout >
+      <HorizontalLayout name="horLayoutLogo" width="90" >
+        <Label name="labelLogo" float="true" pos="20,12,70,62" width="75" height="55" />
+      </HorizontalLayout>
+      <HorizontalLayout>
+        <Label name="labelTitle" float="true" pos="20,10,0,0" width="166" height="20" font="0" textcolor="#FF000000" endellipsis="true"/>
+        <RichEdit name="editContent" float="true" pos="20,35,0,0" width="300" height="40"  endellipsis="true" readonly="true"/>
+      </HorizontalLayout>
+      <HorizontalLayout bkcolor="#FFD6D6D6" height="1"/>
+    </VerticalLayout>
+  </ListContainerElement>
+</Window>-->
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <ListContainerElement height="80" menu="false">
+    <VerticalLayout >
+      <HorizontalLayout>
+        <HorizontalLayout name="horLayoutLogo" width="90" >
+          <Label name="labelLogo" float="true" pos="12,12,70,62" width="75" height="55" />
+        </HorizontalLayout>
+        <HorizontalLayout>
+          <Label name="labelTitle" float="true" pos="20,10,0,0" width="166" height="20" font="1" textcolor="#FF000000" endellipsis="true"/>
+          <RichEdit name="editContent" float="true" pos="20,30,0,0" width="220" height="50"  endellipsis="true" readonly="true" font="2"/>
+        </HorizontalLayout>
+      </HorizontalLayout>
+      <HorizontalLayout bkcolor="#FFD6D6D6" height="1"/>
+    </VerticalLayout>
+  </ListContainerElement>
+</Window>

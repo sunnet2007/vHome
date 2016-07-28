@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="739,556" caption="0,0,0,35">
+  <Font id="0" name="微软雅黑" size="22" />
+  <Font id="1" name="微软雅黑" size="14" bold="true"/>
+  <Font id="2" name="微软雅黑" size="14" />
+  <Font id="3" name="微软雅黑" size="13" />
+  <Font id="4" name="微软雅黑" size="12" />
+  <Font id="5" name="微软雅黑" size="16" />
+  <VerticalLayout>
+    <VerticalLayout bkimage="avtive_title.png" height="71">
+      <HorizontalLayout height="71">
+        <VerticalLayout>
+        <Label name="labelIcon" float="true" pos="20,10,0,0" width="54" height="54" bkimage="active_wnd.png"/>
+        <Label  float="true" pos="100,7,0,0" width="120" height="30" text="活动列表" textcolor="#FFFFFFFF" font="0"/>
+        </VerticalLayout>
+        <VerticalLayout width="50">
+          <Button name="btnMin" tooltip="最小化" float="true" pos="0,0,0,0"  width="23" height="29" normalimage="min_nor.png" hotimage="min_hot.png"/>
+          <Button name="btnClose" float="true" pos="24,0,0,0" width="27" height="29" normalimage="file='close_normal.png' dest='7,8,19,20'" hotimage="close_hot.png"/>
+        </VerticalLayout>
+      </HorizontalLayout>
+
+    </VerticalLayout>
+    <HorizontalLayout height="44" bkcolor="#FFE5E5E5">
+      <HorizontalLayout width="370" >
+        <Option group="activity" name="opNewActive" text="最新活动" textcolor="#FF9C9C9C" font= "5" selectedbkcolor="#FF2875C4"/>
+      </HorizontalLayout>
+      <HorizontalLayout width="369" bkcolor="#FF00FF" >
+        <Option group="activity" name="opMyActive" text="我的活动" textcolor="#FF9C9C9C" font= "5" selectedbkcolor="#FF2875C4"/>
+      </HorizontalLayout>
+    </HorizontalLayout>
+    <VerticalLayout bkcolor="#FFF9F9FC">
+      <TabLayout name="tabs">
+        <VerticalLayout>
+          <NewActive name="lstNewActive" header="hidden" vscrollbar="true" itemshowhtml="true">
+          </NewActive>
+        </VerticalLayout>
+        <VerticalLayout>
+          <MyActive name="lstMyActive" header="hidden" vscrollbar="true" itemshowhtml="true">
+          </MyActive>
+        </VerticalLayout>
+      </TabLayout>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

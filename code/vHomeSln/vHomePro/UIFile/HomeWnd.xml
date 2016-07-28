@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window size="272, 640" caption="0,0,0,35">
-  <Font id="0" name="微软雅黑" size="12" blod="true"/>
+<Window size="272, 640" caption="0,0,0,-1">
+  <Font id="0" name="微软雅黑" size="12" bold="true"/>
   <Font id="1" name="微软雅黑" size="12" />
-  <Default name="VScrollBar" value="button1normalimage=&quot;file='home_65.png'&quot; 
-  button1hotimage=&quot;file='home_65.png'&quot; 
-  button1pushedimage=&quot;file='home_65.png'&quot; 
-  button2normalimage=&quot;file='home_103.png'&quot; 
-  button2hotimage=&quot;file='home_103.png'&quot; 
-  button2pushedimage=&quot;file='home_103.png'&quot; 
-  thumbnormalimage=&quot;file='home_68.png' corner='0,2,0,2'&quot; 
-  thumbhotimage=&quot;file='home_68.png' corner='0,2,0,2'&quot; 
-  thumbpushedimage=&quot;file='home_68.png' corner='0,2,0,2'&quot; 
-  bknormalimage=&quot;file='home_bg.png' &quot;"/>
+  <Default name="VScrollBar" value="button1normalimage=&quot;file='scrollbar.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='scrollbar.png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;file='scrollbar.png' source='32,0,48,16'&quot; button2normalimage=&quot;file='scrollbar.png' source='0,32,16,48'&quot; button2hotimage=&quot;file='scrollbar.png' source='16,32,32,48'&quot; button2pushedimage=&quot;file='scrollbar.png' source='32,32,48,48'&quot; thumbnormalimage=&quot;file='scrollbar.png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;file='scrollbar.png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;file='scrollbar.png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;file='scrollbar.png' source='0,16,16,32'&quot;" />
   <VerticalLayout bkimage="file='home_title.png' " fade="true">
     <HorizontalLayout height="35">
       <Label bkimage="name.png" float ="true" pos="15,10,0,0" width="54" height="15"/>
@@ -19,19 +10,19 @@
       <VerticalLayout width="70" fade="true">
         <Button name="btnQr" float="true" pos="0,10,0,0" width="12" height="12" normalimage="file='qr_normal.png'" />
         <Button name="btnMin" tooltip="最小化" float="true" pos="22,0,0,0"  width="23" height="29" normalimage="min_nor.png" hotimage="min_hot.png"/>
-        <Button name="btnClose" tooltip="关闭" float="true" pos="45,0,0,0" width="27" height="29" normalimage="close_normal.png" hotimage="close_hot.png"/>
+        <Button name="btnClose" tooltip="关闭" float="true" pos="45,0,0,0" width="27" height="29" normalimage="file='close_normal.png' dest='7,8,19,20'" hotimage="close_hot.png"/>
       </VerticalLayout>
     </HorizontalLayout>
     
     <HorizontalLayout height="85">
       <VerticalLayout>
-        <Button name="btnIcon" float="true" pos="10,10,0,0" width="65" height="65" bkimage="file='icon_normal.png'"/>
+        <Label name="labelIcon" float="true" pos="10,10,0,0" width="65" height="65" />
         <Combo name="cbState" float="true" pos="80,15,0,0" width="10" height="10" bkimage="online_normal.png">
          <!-- <ListContainerElement bkimage="online_normal.png" selected="true"/>
           <ListContainerElement bkimage="online_normal.png" /> -->
         </Combo>
         <Label name="labelName" textcolor="#FFFFFFFF" font="0" text="风中的ABCcccccccccccccc" float="true" pos="97,13,0,0" width="60" height="15" endellipsis="true"/>
-        <Edit name="editSign" textcolor="#FFFFFFFF" font="1" text="在这里可以更改签名" float="true" pos="80,35,0,0" width="150" height="30" bkcolor="#FF2263C3"/>
+        <!--<Edit name="editSign" textcolor="#FFFFFFFF" font="1" text="在这里可以更改签名" float="true" pos="80,35,0,0" width="150" height="30" bkcolor="#FF2263C3"/>-->
         <Button name="btnFlush" float="true" pos="240,57,0,0" width="17" height="18" bkimage="flush_normal.png" />
       </VerticalLayout>
     </HorizontalLayout>
@@ -41,40 +32,60 @@
       <Edit name="editSearch" float="true" pos="40,1,0,0" width="240" height="30" bkcolor="#FF2875C4"/>
     </HorizontalLayout>
 
-    <HorizontalLayout height="35" bkimage="bk_option.png">
-      <Option name="optionFinacialAnay" tooltip="财经分析" float="true" pos="1,7,0,0" width="54" height="21" bkimage="file='finacialanay_normal.png' dest='17,0,38,21'"/>
-      <Option name="optionMsgList" tooltip="消息列表" float="true" pos="55,7,0,0" width="54" height="21" bkimage="file='msglist_normal.png' dest='17,0,38,21'"/>
-      <Option name="optionMyCare" tooltip="我的关注" float="true" pos="110,7,0,0" width="54" height="21" bkimage="file='mycare_normal.png' dest='18,0,37,21' "/>
-      <Option name="optionReTeacher" tooltip="推荐讲师" float="true" pos="165,7,0,0" width="54" height="21" bkimage="file='recteacher_normal.png' dest='17,0,38,21'"/>
-      <Option name="optionConsult" tooltip="专家会诊" float="true" pos="220,7,0,0" width="54" height="21" bkimage="file='consult_normal.png' dest='17,0,38,21'"/>
-    </HorizontalLayout>
 
-    <HorizontalLayout bkcolor="#FFF9F9FC">
-      <TabLayout name="tabs">
+
+      <HorizontalLayout name="hlStuOp" height="35" bkimage="bk_option.png">
+        <Option group="student" name="optionFinacialAnay" tooltip="财经分析" float="true" pos="2,7,0,0" width="67" height="21" normalimage="file='finacialanay_normal.png' dest='17,0,38,21'" selectedimage="file='finacialanay_selected.png' dest='17,0,38,21'" />
+        <Option group="student" name="optionMyCare" tooltip="我的关注" float="true" pos="69,7,0,0" width="67" height="21" normalimage="file='mycare_normal.png' dest='18,0,37,21'" selectedimage="file='mycare_selected.png' dest='18,0,37,21'" />
+        <Option group="student" name="optionReTeacher" tooltip="推荐讲师" float="true" pos="136,7,0,0" width="67" height="21" normalimage="file='recteacher_normal.png' dest='17,0,38,21'" selectedimage="file='recteacher_selected.png' dest='17,0,38,21'" />
+        <Option group="student" name="optionCele" tooltip="名人榜单" float="true" pos="203,7,0,0" width="67" height="21" normalimage="file='consult_normal.png' dest='17,0,38,21'" selectedimage="file='consult_selected.png' dest='17,0,38,21'" />
+      </HorizontalLayout>
+    
+    <HorizontalLayout name="hlStuTab" bkcolor="#FFF9F9FC">
+      <TabLayout name="tabs"> 
         <VerticalLayout>
+          <GifAnim name="loading" autoplay="true"/>
           <AnayList name="lstAnay" header="hidden" vscrollbar="true" itemshowhtml="true">            
           </AnayList>
-        </VerticalLayout>
-        <VerticalLayout>
-          <MsgList name="lstMsg" header="hidden" vscrollbar="true" itemshowhtml="true"/>
         </VerticalLayout>
         <VerticalLayout>
           <CareList name="lstCare" header="hidden" vscrollbar="true" itemshowhtml="true"/>
         </VerticalLayout>
         <VerticalLayout>
-          <TeacherList name="lstTeacher" header="hidden" vscrollbar="true"/>
+          <TeacherList name="lstTeacher" header="hidden" itemshowhtml="true" vscrollbar="true"/>
         </VerticalLayout>
         <VerticalLayout>
-          <Specialist name="lstSpenia" header="hidden" vscrollbar="true"/>
+          <Celelist name="lstCele" header="hidden" itemshowhtml="true" vscrollbar="true"/>
         </VerticalLayout>
       </TabLayout>
     </HorizontalLayout>
+
+    <HorizontalLayout name="hlTeacherOp" height="35" bkimage="bk_option.png">
+      <Option group="teacher" name="opTeacherAnay" tooltip="财经分析" float="true" pos="1,7,0,0" width="90" height="21" normalimage="file='finacialanay_normal.png' dest='17,0,38,21'" selectedimage="file='finacialanay_selected.png' dest='17,0,38,21'"/>
+      <Option group="teacher" name="opMyArt" tooltip="我的文章" float="true" pos="91,7,0,0" width="90" height="21" normalimage="file='recteacher_normal.png' dest='17,0,38,21'" selectedimage="file='recteacher_selected.png' dest='17,0,38,21'"/>
+      <Option group="teacher" name="opNewArt" tooltip="发表文章" float="true" pos="181,7,0,0" width="90" height="21" normalimage="file='newart_normal.png' dest='19,2,35,18'" selectedimage="file='newart_selected.png' dest='19,2,35,18'" />
+    </HorizontalLayout>
     
+    <HorizontalLayout name="hlTeacherTab" bkcolor="#FFF9F9FC">
+      <TabLayout name="TeacherTabs">
+        <VerticalLayout>
+          <TeacherAnayList name="lstTeacherAnay" header="hidden" vscrollbar="true" itemshowhtml="true">
+          </TeacherAnayList>
+        </VerticalLayout>
+        <VerticalLayout>
+          <ArtList name="lstMyArt" header="hidden" vscrollbar="true" itemshowhtml="true"/>
+        </VerticalLayout>
+      </TabLayout>
+    </HorizontalLayout>
+
+   
+      
     <HorizontalLayout height="35" bkcolor="#FFDFE8F4">
-      <Button name="btnAbout" tooltip="关于" float="true" pos="20,7,0,0" width="21" height="21" bkimage="about_normal.png"/>
-      <Button name="btnSetting" tooltip="设置" float="true" pos="50,7,0,0" width="18" height="21" bkimage="setting_normal.png"/>
-      <Button name="btnSound" tooltip="声音控制" float="true" pos="80,7,0,0" width="19" height="21" bkimage="sound_normal.png"/>
-      <Button name="btnVersion" tooltip="版本信息" float="true" pos="240,7,0,0" width="19" height="21" bkimage="version_normal.png"/>
+      <Button name="btnAbout" tooltip="关于" float="true" pos="20,7,0,0" width="21" height="21" normalimage="about_normal.png" hotimage="about_hot.png"/>
+      <Button name="btnSetting" tooltip="设置" float="true" pos="50,7,0,0" width="18" height="21" normalimage="setting_normal.png" hotimage="setting_hot.png"/>
+      <Button name="btnSound" tooltip="声音控制" float="true" pos="80,7,0,0" width="19" height="21" normalimage="sound_normal.png" hotimage="sound_hot.png"/>
+      <Button name="btnActive" tooltop="活动" float="true" pos="110,10,0,0" width="15" height="17" normalimage="active_normal.png" hotimage="active_hot.png"/>
+      <Button name="btnVersion" tooltip="版本信息" float="true" pos="240,9,0,0" width="19" height="21" bkimage="version_normal.png"/>
     </HorizontalLayout>
   </VerticalLayout>
 </Window>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="525,525" caption="0,0,0,-1">
+  <Font id="0" name="微软雅黑" size="22" />
+  <Font id="1" name="微软雅黑" size="14" bold="true"/>
+  <Font id="2" name="微软雅黑" size="14" />
+  <Font id="3" name="微软雅黑" size="13" />
+  <Font id="4" name="微软雅黑" size="12" />
+  <Font id="5" name="微软雅黑" size="16" />
+  <Font id="6" name="微软雅黑" size="18" />
+  <Font id="7" name="微软雅黑" size="20" />
+  <Font id="8" name="微软雅黑" size="10" />
+  <VerticalLayout bkcolor="#FFFFFFFF">
+    <VerticalLayout bkimage="activity_info_wnd.png" height="108">
+      <HorizontalLayout height="25" >
+        <VerticalLayout />
+        <VerticalLayout width="60">
+          <Button name="btnMin" tooltip="最小化" float="true" pos="0,0,0,0"  width="23" height="29" normalimage="min_nor.png" hotimage="min_hot.png"/>
+          <Button name="btnClose" float="true" pos="24,0,0,0" width="27" height="29" normalimage="file='close_normal.png' dest='7,8,19,20'" hotimage="close_hot.png"/>
+        </VerticalLayout>
+      </HorizontalLayout>
+      <HorizontalLayout>
+        <Label name="labelImg" float="true" pos="20,0,0,0" width="95" height="76" bkimage="activity_info.png"/>
+        <Label name="labelName" float="true" pos="130,3,0,0" width="300" height="20" text="爱在春季活动主题" textcolor="#FFFFFFFF" font="6"/>
+        <Label float="true" pos="130,30,0,0" width="80" height="20" text="活动时间:" textcolor="#FFFB8047" font="5" />
+        <Label name="labelStart" float="true" pos="205,30,0,0" width="70" height="20"  textcolor="#FFFFFFFF" font="2"/>
+        <Label float="true" pos="280,30,0,0" width="5" height="20" text="-" textcolor="#FFFFFFFF" font="2"/>
+        <Label name="labelEnd" float="true" pos="290,30,0,0" width="70" height="20"  textcolor="#FFFFFFFF" font="2"/>
+        <Button name="btnApply" float="true" pos="400,30,0,0" width="120" height="35" bkcolor="#FFFB8047" text="我要报名" textcolor="#FFFFFFFF" font="7"/>
+        <Label float="true" pos="130,60,0,0" width="18" height="18" bkimage="activity_num.png"/>
+        <Label name="labelNum" float="true" pos="160,60,0,0" width="40" height="18" textcolor="#FF00FF00" font="2" />
+        <Label float="true" pos="190,60,0,0" width="60" height="18" text="人已报名" textcolor="#FFFFFFFF" font="2"/>
+      </HorizontalLayout> 
+    </VerticalLayout>
+    <VerticalLayout bkcolor="#FFEEEEEE" height="45">
+      <Label float="true" pos="30,12,0,0" width="80" height="20" text="活动详情" textcolor="#FF000000" font="6" />
+      <Label float="true" pos="380,12,0,0" width="115" height="21" bkimage="activity_tip.png" />
+      <Label float="true" pos="397,12,0,0" width="50" height="21" text="名额即满" textcolor="#FF000000" font="8"/>
+      <Label float="true" pos="445,12,0,0" width="50" height="21" text="把握时间" textcolor="#FF00FF00" font="8"/>
+      <Label float="true"/>
+    </VerticalLayout>
+    <VerticalLayout>
+      <!--  <RichEdit name="reditContent" float="true" pos="0,0,0,0" width="525" height="372" showhtml="true" bkcolor="#FFFFFFFF" multiline="true" autovscroll="true" readonly="true"/>
+      -->
+      <WebBrowser name="webContent" float="true" pos="0,0,0,0" width="525" height="360" />
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

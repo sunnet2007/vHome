@@ -17,9 +17,6 @@
     <Filter Include="Model">
       <UniqueIdentifier>{059959f8-0f33-4ac3-8df7-42a7b7814627}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UI\HeaderFile">
-      <UniqueIdentifier>{159af6ec-1e77-4663-b3ff-fde0604534b8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI\SourceFile">
       <UniqueIdentifier>{384330a1-14e4-44b8-9fba-433606ea2378}</UniqueIdentifier>
     </Filter>
@@ -62,15 +59,6 @@
     <Filter Include="Common\Database">
       <UniqueIdentifier>{e67873fc-c545-4c72-b925-45052dcf244d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Common\Jsoncpp\include">
-      <UniqueIdentifier>{f15175d3-b5d9-4ea3-8bb0-518cc3cfc61a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common\Jsoncpp\json">
-      <UniqueIdentifier>{ea7bcb4e-601f-43ce-afdd-9734ed704121}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common\Jsoncpp\source">
-      <UniqueIdentifier>{db38ebba-f7ff-43e3-bbed-159dc5dbba6b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="BLL">
       <UniqueIdentifier>{80711f82-d677-49c8-befd-fbc5a5566644}</UniqueIdentifier>
     </Filter>
@@ -79,6 +67,18 @@
     </Filter>
     <Filter Include="BLL\SourceFile">
       <UniqueIdentifier>{e56dc18c-9cc5-4070-b563-ce33c81e280d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp\json">
+      <UniqueIdentifier>{3b211c6e-5141-46d3-a201-0edd6d8670c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp\include">
+      <UniqueIdentifier>{17de1b41-03fe-430a-84db-1fbdcb15805c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Jsoncpp\include\json">
+      <UniqueIdentifier>{5aa3b4df-e8f1-4b10-b585-67dd4e3c482d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\HeaderFile">
+      <UniqueIdentifier>{159af6ec-1e77-4663-b3ff-fde0604534b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,9 +111,6 @@
     </ClInclude>
     <ClInclude Include="StringUtil.h">
       <Filter>Util</Filter>
-    </ClInclude>
-    <ClInclude Include="AnayListUI.h">
-      <Filter>UI\HeaderFile</Filter>
     </ClInclude>
     <ClInclude Include="UserManagerLogic.h">
       <Filter>BLL\HeaderFile</Filter>
@@ -166,63 +163,6 @@
     <ClInclude Include="Common\Network\stdafx.h">
       <Filter>Common\Network</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json_batchallocator.h">
-      <Filter>Common\Jsoncpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\JsonInterface.h">
-      <Filter>Common\Jsoncpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\source\json_batchallocator.h">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\autolink.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\config.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\features.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\forwards.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\json.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\reader.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\value.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\json\writer.h">
-      <Filter>Common\Jsoncpp\json</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\autolink.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\config.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\features.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\forwards.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\json.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\reader.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\value.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Jsoncpp\include\writer.h">
-      <Filter>Common\Jsoncpp\include</Filter>
-    </ClInclude>
     <ClInclude Include="RegisterInfo.h">
       <Filter>Model\HeaderFile</Filter>
     </ClInclude>
@@ -265,7 +205,102 @@
     <ClInclude Include="CareListUI.h">
       <Filter>UI\HeaderFile</Filter>
     </ClInclude>
-    <ClInclude Include="AboutWnd.h" />
+    <ClInclude Include="ForgetPwd.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="AnayListUI.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ActiveWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivityDao.h">
+      <Filter>DAL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Activity.h">
+      <Filter>Model\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivityLogic.h">
+      <Filter>BLL\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivityListUI.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\autolink.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\config.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\features.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\forwards.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\json.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\reader.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\value.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\include\json\writer.h">
+      <Filter>Common\Jsoncpp\include\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json_batchallocator.h">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json_tool.h">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\autolink.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\config.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\features.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\forwards.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\json.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\reader.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\value.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Jsoncpp\json\writer.h">
+      <Filter>Common\Jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivityInfoWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="ArtListUI.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\base_string.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ArtDetailsWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utility\base_file.h">
+      <Filter>Common\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutWnd.h">
+      <Filter>UI\HeaderFile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppMain.cpp" />
@@ -338,24 +373,6 @@
     <ClCompile Include="Common\Network\Sock.cpp">
       <Filter>Common\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Jsoncpp\json_reader.cpp">
-      <Filter>Common\Jsoncpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Jsoncpp\json_value.cpp">
-      <Filter>Common\Jsoncpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Jsoncpp\json_writer.cpp">
-      <Filter>Common\Jsoncpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Jsoncpp\source\json_reader.cpp">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Jsoncpp\source\json_value.cpp">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Jsoncpp\source\json_writer.cpp">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </ClCompile>
     <ClCompile Include="RegisterInfo.cpp">
       <Filter>Model\SourceFile</Filter>
     </ClCompile>
@@ -405,16 +422,60 @@
     <ClCompile Include="CareListUI.cpp">
       <Filter>UI\SourceFile</Filter>
     </ClCompile>
-    <ClCompile Include="AboutWnd.cpp" />
+    <ClCompile Include="ForgetPwd.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ActiveWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivityDao.cpp">
+      <Filter>DAL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Activity.cpp">
+      <Filter>Model\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivityLogic.cpp">
+      <Filter>BLL\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivityListUI.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\json_reader.cpp">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\json_value.cpp">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Jsoncpp\json_writer.cpp">
+      <Filter>Common\Jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivityInfoWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="ArtListUI.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\base_string.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ArtDetailsWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utility\base_file.cpp">
+      <Filter>Common\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutWnd.cpp">
+      <Filter>UI\SourceFile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="UIFile\LoginWnd.xml">
       <Filter>UI\UIFile</Filter>
     </Xml>
     <Xml Include="UIFile\MenuWnd.xml">
-      <Filter>UI\UIFile</Filter>
-    </Xml>
-    <Xml Include="UIFile\PersonSettingWnd.xml">
       <Filter>UI\UIFile</Filter>
     </Xml>
     <Xml Include="UIFile\RegisterWnd.xml">
@@ -441,14 +502,42 @@
     <Xml Include="UIFile\TeacherList.xml">
       <Filter>UI\UIFile</Filter>
     </Xml>
+    <Xml Include="UIFile\MenuWnd2.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\MenuWnd3.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\SettingWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ActiveWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ActiveList.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ActivityInfoWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ArtList.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ArtList2.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\ArtDetailsWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
+    <Xml Include="UIFile\AboutWnd.xml">
+      <Filter>UI\UIFile</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UIFile\index.htm">
-      <Filter>UI\UIFile</Filter>
-    </None>
     <None Include="UIFile\app.config">
       <Filter>Config</Filter>
     </None>
+    <None Include="app.config" />
     <None Include="Common\Jsoncpp\json_internalarray.inl">
       <Filter>Common\Jsoncpp</Filter>
     </None>
@@ -461,20 +550,26 @@
     <None Include="Common\Jsoncpp\sconscript">
       <Filter>Common\Jsoncpp</Filter>
     </None>
-    <None Include="Common\Jsoncpp\source\json_internalarray.inl">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </None>
-    <None Include="Common\Jsoncpp\source\json_internalmap.inl">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </None>
-    <None Include="Common\Jsoncpp\source\json_valueiterator.inl">
-      <Filter>Common\Jsoncpp\source</Filter>
-    </None>
-    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="vHomePro.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Common\Jsoncpp\Readme.txt">
+      <Filter>Common\Jsoncpp</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\vHome.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\vHome_icon.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

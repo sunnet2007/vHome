@@ -2,15 +2,16 @@
 <Window>
   <Font id="0" name="微软雅黑" size="40" bold="true" />
   <ListContainerElement height="85" menu="true">
-    <VerticalLayout >
+    <VerticalLayout name="vLayout">
       <Label name="labelImg" float="true" pos="12,12,62,62" width="50" height="50" />
-      <Label name="labelName" float="true" pos="70,10,0,0" width="60" height="20" text="李老师" font="0"/>
-      <Label name="labelOneStar" float="true" pos="160,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>
+      <Label name="labelName" float="true" pos="70,10,0,0" width="100" height="20" text="李老师" font="0" endellipsis="true"/>
+      <!--<Label name="labelOneStar" float="true" pos="160,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>
       <Label name="labelTwoStar" float="true" pos="175,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>
       <Label name="labelThreeStar" float="true" pos="190,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>
       <Label name="labelFourStar" float="true" pos="205,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>
-      <Label name="labelFiveStar" float="true" pos="220,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>
-      <Label name="labelSign" float="true" pos="70,35,0,0" width="140" height="15"  />
+      <Label name="labelFiveStar" float="true" pos="220,10,0,0" width="13" height="13" bkimage="file='lightstart.png' source='0,3,13,16'"/>-->
+      <Label name="labelSign" float="true" pos="70,35,0,0" width="175" height="15" endellipsis="true" />
+      <HorizontalLayout bkcolor="#FFD6D6D6" height="1"/>
     </VerticalLayout>
   </ListContainerElement>
 </Window>

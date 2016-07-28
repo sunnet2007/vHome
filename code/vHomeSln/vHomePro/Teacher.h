@@ -1,6 +1,27 @@
 #pragma once
 #include <string>
+#include <vector>
 using namespace std;
+
+// 擅长项目
+class CSpecialty
+{
+public:
+	CSpecialty(void);
+	~CSpecialty(void);
+
+public:
+	void SetId(int nId);
+	void SetName(const string& strName);
+
+	int GetId() const;
+	string GetName() const;
+
+private:
+	int m_nId;
+	string m_strName;
+};
+
 
 // 讲师信息实体类
 class CTeacher
@@ -18,9 +39,16 @@ public:
 	void SetUid(int nUid);
 	void SetStar(int nStar);
 	void SetIfAttention(int nIfAttention);
-	void SetSchool(string strSchool);
-	void SetArticle(string strArticle);
+	void SetSchool(const string& strSchool);
+	void SetArticle(const string& strArticle);
 	void SetArticleId(int nArticleId);
+	void SetNicName(const string& strNicName);
+	void SetSex(const string& strSex);
+	void SetEmail(const string& strEmail);
+	void SetQq(const string& strQq);
+	void SetExid(int nId);
+	void SetGoodat(const vector<CSpecialty> vecGoodat);
+	void SetGoodatIds(const string& strGoodatIds);
 
 	string GetName() const;
 	string GetDesc() const;
@@ -33,12 +61,19 @@ public:
 	string GetSchool() const;
 	string GetArticle() const;
 	int GetArticleId() const;
-
+	string GetNicName() const;
+	string GetSex() const;
+	string GetEmail() const;
+	string GetQq() const;
+	int GetExid() const;
+	vector<CSpecialty> GetGoodat() const;
+	string GetGoodIds() const;
 
 protected:
 	string	m_strName;		// 讲师名称
 	string	m_strDesc;		// 讲师简介
 	string	m_strExName;	// 交易所名称
+	int		m_nExid;		// 交易所id
 	string	m_strImgThumb;	// 头像
 	int		m_nNum;			// 粉丝人数
 	int		m_nUid;			// 讲师Uid
@@ -47,5 +82,11 @@ protected:
 	string	m_strSchool;	// 毕业院校
 	string	m_strArticle;	// 最新文章
 	int		m_nArticleId;	// 最新文章ID
+	string	m_strNicName;	// 讲师昵称
+	string	m_strSex;			// 性别
+	string	m_strEmail;		// 邮箱
+	string	m_strQq;		// QQ
+	vector<CSpecialty> m_vecGoodat;	// 擅长
+	string m_strGoodatIds;		// 擅长项ID字符串
 };
 

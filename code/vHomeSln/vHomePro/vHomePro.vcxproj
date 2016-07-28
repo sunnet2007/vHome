@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\vsspace\DuiLib_Redrain-master\DuiLib;Common\Jsoncpp;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);E:\vsspace\DuiLib_Redrain-master\DuiLib;Common/jsoncpp;$(IncludePath)</IncludePath>
     <LibraryPath>E:\vsspace\DuiLib_Redrain-master\Lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\Common\Jsoncpp;E:\vsspace\DuiLib_Redrain-master\DuiLib;..\Common\Utility;..\Common\Network;$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);E:\vsspace\DuiLib_Redrain-master\DuiLib;Common/jsoncpp;$(IncludePath)</IncludePath>
     <LibraryPath>E:\vsspace\DuiLib_Redrain-master\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -57,10 +57,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -72,29 +74,36 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AboutWnd.cpp" />
+    <ClCompile Include="ActiveWnd.cpp" />
+    <ClCompile Include="Activity.cpp" />
+    <ClCompile Include="ActivityDao.cpp" />
+    <ClCompile Include="ActivityInfoWnd.cpp" />
+    <ClCompile Include="ActivityListUI.cpp" />
+    <ClCompile Include="ActivityLogic.cpp" />
     <ClCompile Include="AnayListUI.cpp" />
     <ClCompile Include="AppConfig.cpp" />
     <ClCompile Include="AppMain.cpp" />
+    <ClCompile Include="ArtDetailsWnd.cpp" />
     <ClCompile Include="Article.cpp" />
+    <ClCompile Include="ArtListUI.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Banner.cpp" />
     <ClCompile Include="CareListUI.cpp" />
     <ClCompile Include="Common\Jsoncpp\json_reader.cpp" />
     <ClCompile Include="Common\Jsoncpp\json_value.cpp" />
     <ClCompile Include="Common\Jsoncpp\json_writer.cpp" />
-    <ClCompile Include="Common\Jsoncpp\source\json_reader.cpp" />
-    <ClCompile Include="Common\Jsoncpp\source\json_value.cpp" />
-    <ClCompile Include="Common\Jsoncpp\source\json_writer.cpp" />
     <ClCompile Include="Common\Network\HttpClient.cpp" />
     <ClCompile Include="Common\Network\HttpMsg.cpp" />
     <ClCompile Include="Common\Network\NetAddr.cpp" />
@@ -104,6 +113,8 @@
     <ClCompile Include="Common\tinyxml\tinyxmlerror.cpp" />
     <ClCompile Include="Common\tinyxml\tinyxmlparser.cpp" />
     <ClCompile Include="Common\Utility\Base64.cpp" />
+    <ClCompile Include="Common\Utility\base_file.cpp" />
+    <ClCompile Include="Common\Utility\base_string.cpp" />
     <ClCompile Include="Common\Utility\CommFuns.cpp" />
     <ClCompile Include="Common\Utility\CrossPlatform.cpp" />
     <ClCompile Include="Common\Utility\Log.cpp" />
@@ -113,12 +124,14 @@
     <ClCompile Include="ExchangeDao.cpp" />
     <ClCompile Include="ExchangeLogic.cpp" />
     <ClCompile Include="ExTeacherListUI.cpp" />
+    <ClCompile Include="ForgetPwd.cpp" />
     <ClCompile Include="HomeWnd.cpp" />
     <ClCompile Include="LoginWnd.cpp" />
     <ClCompile Include="RegisterInfo.cpp" />
     <ClCompile Include="RegisterWnd.cpp" />
     <ClCompile Include="ResMsg.cpp" />
     <ClCompile Include="SearchWnd.cpp" />
+    <ClCompile Include="SettingWnd.cpp" />
     <ClCompile Include="ShowInfoWnd.cpp" />
     <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="Student.cpp" />
@@ -132,21 +145,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AboutWnd.h" />
+    <ClInclude Include="ActiveWnd.h" />
+    <ClInclude Include="Activity.h" />
+    <ClInclude Include="ActivityDao.h" />
+    <ClInclude Include="ActivityInfoWnd.h" />
+    <ClInclude Include="ActivityListUI.h" />
+    <ClInclude Include="ActivityLogic.h" />
     <ClInclude Include="AnayListUI.h" />
     <ClInclude Include="AppConfig.h" />
+    <ClInclude Include="ArtDetailsWnd.h" />
     <ClInclude Include="Article.h" />
+    <ClInclude Include="ArtListUI.h" />
     <ClInclude Include="Auth.h" />
     <ClInclude Include="Banner.h" />
     <ClInclude Include="CareListUI.h" />
-    <ClInclude Include="Common\Jsoncpp\include\autolink.h" />
-    <ClInclude Include="Common\Jsoncpp\include\config.h" />
-    <ClInclude Include="Common\Jsoncpp\include\features.h" />
-    <ClInclude Include="Common\Jsoncpp\include\forwards.h" />
-    <ClInclude Include="Common\Jsoncpp\include\json.h" />
-    <ClInclude Include="Common\Jsoncpp\include\reader.h" />
-    <ClInclude Include="Common\Jsoncpp\include\value.h" />
-    <ClInclude Include="Common\Jsoncpp\include\writer.h" />
-    <ClInclude Include="Common\Jsoncpp\JsonInterface.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\autolink.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\config.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\features.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\forwards.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\json.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\reader.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\value.h" />
+    <ClInclude Include="Common\Jsoncpp\include\json\writer.h" />
     <ClInclude Include="Common\Jsoncpp\json\autolink.h" />
     <ClInclude Include="Common\Jsoncpp\json\config.h" />
     <ClInclude Include="Common\Jsoncpp\json\features.h" />
@@ -156,7 +176,7 @@
     <ClInclude Include="Common\Jsoncpp\json\value.h" />
     <ClInclude Include="Common\Jsoncpp\json\writer.h" />
     <ClInclude Include="Common\Jsoncpp\json_batchallocator.h" />
-    <ClInclude Include="Common\Jsoncpp\source\json_batchallocator.h" />
+    <ClInclude Include="Common\Jsoncpp\json_tool.h" />
     <ClInclude Include="Common\Network\HttpClient.h" />
     <ClInclude Include="Common\Network\HttpMsg.h" />
     <ClInclude Include="Common\Network\NetAddr.h" />
@@ -165,6 +185,8 @@
     <ClInclude Include="Common\tinyxml\tinystr.h" />
     <ClInclude Include="Common\tinyxml\tinyxml.h" />
     <ClInclude Include="Common\Utility\Base64.h" />
+    <ClInclude Include="Common\Utility\base_file.h" />
+    <ClInclude Include="Common\Utility\base_string.h" />
     <ClInclude Include="Common\Utility\CommFuns.h" />
     <ClInclude Include="Common\Utility\CrossPlatform.h" />
     <ClInclude Include="Common\Utility\Lock.h" />
@@ -177,6 +199,7 @@
     <ClInclude Include="ExchangeDao.h" />
     <ClInclude Include="ExchangeLogic.h" />
     <ClInclude Include="ExTeacherListUI.h" />
+    <ClInclude Include="ForgetPwd.h" />
     <ClInclude Include="HomeWnd.h" />
     <ClInclude Include="LoginWnd.h" />
     <ClInclude Include="RegisterInfo.h" />
@@ -184,6 +207,7 @@
     <ClInclude Include="ResMsg.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SearchWnd.h" />
+    <ClInclude Include="SettingWnd.h" />
     <ClInclude Include="ShowInfoWnd.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="Student.h" />
@@ -195,9 +219,24 @@
     <ClInclude Include="UserManagerLogic.h" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="UIFile\AboutWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\ActiveList.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\ActiveWnd.xml" />
+    <Xml Include="UIFile\ActivityInfoWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="UIFile\AnayList.xml">
       <SubType>Designer</SubType>
     </Xml>
+    <Xml Include="UIFile\ArtDetailsWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\ArtList.xml" />
+    <Xml Include="UIFile\ArtList2.xml" />
     <Xml Include="UIFile\CareList.xml" />
     <Xml Include="UIFile\ExTeacherList.xml" />
     <Xml Include="UIFile\HomeWnd.xml">
@@ -207,12 +246,20 @@
       <SubType>Designer</SubType>
     </Xml>
     <Xml Include="UIFile\MenuWnd.xml" />
-    <Xml Include="UIFile\PersonSettingWnd.xml" />
-    <Xml Include="UIFile\RegisterWnd.xml" />
+    <Xml Include="UIFile\MenuWnd2.xml" />
+    <Xml Include="UIFile\MenuWnd3.xml" />
+    <Xml Include="UIFile\RegisterWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="UIFile\SearchWnd.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="UIFile\ShowInfoWnd.xml" />
+    <Xml Include="UIFile\SettingWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UIFile\ShowInfoWnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="UIFile\TeacherList.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -221,16 +268,18 @@
     <None Include="Common\Jsoncpp\json_internalmap.inl" />
     <None Include="Common\Jsoncpp\json_valueiterator.inl" />
     <None Include="Common\Jsoncpp\sconscript" />
-    <None Include="Common\Jsoncpp\source\json_internalarray.inl" />
-    <None Include="Common\Jsoncpp\source\json_internalmap.inl" />
-    <None Include="Common\Jsoncpp\source\json_valueiterator.inl" />
     <None Include="UIFile\app.config" />
-    <None Include="UIFile\index.htm">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="vHomePro.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Common\Jsoncpp\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\vHome.ico" />
+    <Image Include="res\vHome_icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

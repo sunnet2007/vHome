@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="442,556" caption="0,0,0,-1">
+  <Font id="0" name="微软雅黑" size="22" />
+  <Font id="1" name="微软雅黑" size="14" bold="true"/>
+  <Font id="2" name="微软雅黑" size="14" />
+  <Font id="3" name="微软雅黑" size="13" />
+  <Font id="4" name="微软雅黑" size="12" />
+  <Font id="5" name="微软雅黑" size="16" />
+  <Font id="6" name="微软雅黑" size="18" />
+  <Default name="VScrollBar" value="button1normalimage=&quot;file='scrollbar.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='scrollbar.png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;file='scrollbar.png' source='32,0,48,16'&quot; button2normalimage=&quot;file='scrollbar.png' source='0,32,16,48'&quot; button2hotimage=&quot;file='scrollbar.png' source='16,32,32,48'&quot; button2pushedimage=&quot;file='scrollbar.png' source='32,32,48,48'&quot; thumbnormalimage=&quot;file='scrollbar.png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;file='scrollbar.png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;file='scrollbar.png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;file='scrollbar.png' source='0,16,16,32'&quot;" />
+  <VerticalLayout>
+    <VerticalLayout bkimage="showinfo_title.png" height="165" bkcolor="#FFFF0000">
+      <HorizontalLayout height="32">
+        <VerticalLayout />
+        <VerticalLayout width="30">
+          <Button name="btnClose" float="true" pos="0,0,0,0" width="27" height="29" normalimage="file='close_normal.png' dest='7,8,19,20'" hotimage="close_hot.png"/>
+        </VerticalLayout>
+      </HorizontalLayout>
+      <HorizontalLayout name="horLayoutTeacher" height="133">
+        <Label name="labelIcon" float="true" pos="30,5,0,0" width="100" height="100"/>
+        <Label name="labelName" float="true" pos="170,7,0,0" width="100" height="30"  textcolor="#FFFFFFFF" font="0" endellipsis="true"/>
+        <Label name="labelLevel" float="true" pos="280,20,0,0" width="60" height="16" text="一级讲师" textcolor="#FFFFFFFF" font="1"/>
+        <Label name="labelAuth" float="true" pos="360,22,0,0" width="14" height="14" bkimage="selected.png" />
+        <Label name="labelPerson" float="true" pos="170,50,0,0" width="22" height="22" bkimage="file='personicon.png' dest='2,0,20,22' "  />
+        <Label name="labelNum" float="true" pos="192,50,0,0" width="30" height="20" text="100" textcolor="#FFCD0532" font="2" />
+        <Label name="labelCare" float="true" pos="220,50,0,0" width="35" height="20" text="人关注" textcolor="#FFFFFFFF" font="4"/>
+        <Label name="labelOneStart" float="true" pos="260,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="275,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="290,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="305,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelOneStart" float="true" pos="320,50,0,0" width="20" height="20" bkimage="file='lightstart.png' dest='3,0,16,19'" />
+        <Label name="labelDesc" float="true" pos="170,80,0,0" width="150" height="20" textcolor="#FFFFFFFF" font="3" endellipsis="true"/>
+      </HorizontalLayout>
+      <HorizontalLayout name="horLayoutStudent" height="133">
+        <Label name="labelStuIcon" float="true" pos="30,5,0,0" width="100" height="100" />
+        <Label name="labelStuName" float="true" pos="170,20,0,0" width="120" height="30"  textcolor="#FFFFFFFF" font="0" endellipsis="true"/>
+        <Label name="labelStuDesc" float="true" pos="170,80,0,0" width="150" height="20" textcolor="#FFFFFFFF" font="3" endellipsis="true"/>
+      </HorizontalLayout>
+
+    </VerticalLayout>
+    <HorizontalLayout height="44" bkimage="showmid.png">
+      <HorizontalLayout width="141" >
+        <Label name="labelEdit" float="true" pos="18,13,0,0" width="20" height="20" bkimage="info_normal.png" />
+        <Option group="setting" name="opEdit" text="编辑资料" textcolor="#FF9C9C9C" font= "2" selectedbkcolor="#FF2875C4" />
+      </HorizontalLayout>
+      <HorizontalLayout width="148" bkcolor="#FF00FF" >
+        <Label name="labelSecurity" float="true" pos="18,13,0,0" width="14" height="16" bkimage="file='security_normal.png' source='0,0,14,16' " />
+        <Option group="setting" name="opSecurity" text="账户安全" textcolor="#FF9C9C9C" font= "2" selectedbkcolor="#FF2875C4" />
+      </HorizontalLayout>
+      <HorizontalLayout name="horLayoutOption"  width="154">
+        <Label name="labelNew" float="true" pos="18,13,0,0" width="20" height="20" bkimage="file='atricle_normal.png' source='0,0,20,20' " />
+        <Option group="setting" name="opNew" text="发表文章" textcolor="#FF9C9C9C" font= "2" selectedbkcolor="#FF2875C4" />
+      </HorizontalLayout>
+    </HorizontalLayout>
+    <VerticalLayout height="390">
+      <TabLayout name="tabs">
+        <VerticalLayout bkcolor="#FFFFFFFF">
+          <HorizontalLayout height="115">
+            <Label name="labelImg" float="true" pos ="20,20,0,0" width="76" height="60" bkimage="no_img.png" />
+            <Button name="btnUpload" float="true" pos="20,82,0,0" width="76" height="15" bkimage="upload_normal.png" />
+
+            <Label float="true" pos="110,20,0,0" width="40"  height="20" text="昵称：" textcolor="#FF000000" font="4"/>
+            <Edit name="editNicName" float="true" pos="150,20,0,0" width="115" height="25" text="" textcolor="#FF000000" font="4" bordersize="1" bordercolor="#FFF4F4F4"/>
+
+            <Label float="true" pos="275,20,0,0" width="40"  height="20" text="姓名：" textcolor="#FF000000" font="4"/>
+            <Edit name="editName" float="true" pos="315,20,0,0" width="115" height="25" text="" textcolor="#FF000000" font="4" bordersize="1" bordercolor="#FFF4F4F4"/>
+
+            <Label float="true" pos="110,50,0,0" width="40"  height="20" text="QQ：" textcolor="#FF000000" font="4"/>
+            <Edit name="editQQ" float="true" pos="150,50,0,0" width="115" height="25" text="XXXX" textcolor="#FF000000" font="4" bordersize="1" bordercolor="#FFF4F4F4"/>
+
+            <Label float="true" pos="275,50,0,0" width="40"  height="20" text="邮箱：" textcolor="#FF000000" font="4"/>
+            <Edit name="editEmail" float="true" pos="315,50,0,0" width="115" height="25" text="" textcolor="#FF000000" font="4" bordersize="1" bordercolor="#FFF4F4F4"/>
+
+            <Label float="true" pos="110,80,0,0" width="40"  height="20" text="性别：" textcolor="#FF000000" font="4"/>
+            <Combo name="ComboSex" float="true" pos="150,80,0,0" width="113" height="29" normalimage="file='combo_sex_normal.png'" hotimage="file='combo_sex_normal.png' " pushedimage="file='combo_sex_normal.png' " textpadding="4,1,1,1">
+              <ListLabelElement text="男" />
+              <ListLabelElement text="女" />
+            </Combo>
+          </HorizontalLayout>
+          <HorizontalLayout>
+            <VerticalLayout float="true" pos="15,10,0,0" width="412" height="1" bkcolor="#FFF4F4F4"/>
+            <VerticalLayout name="stuVerLayout">
+              <Label float="true" pos="20,10,0,0" width="70" height="40" text="个人说明：" textcolor="#FF000000" font="4"/>
+              <RichEdit name="editDesc" float="true" pos="90,20,0,0" width="335" height="70" bordersize="1" bordercolor="#FFF4F4F4" textcolor="#FF000000" showhtml="true"/>
+            </VerticalLayout>
+
+            <VerticalLayout name="teacherVerLayout">
+              <Label float="true" pos="20,20,0,0" width="110" height="20" text="毕  业  院  校" textcolor="#FF000000" font="2"/>
+              <Edit name="editSchool" float="true" pos="120,20,0,0" width="300" height="25"  textcolor="#FF000000" font="2" bkimage="edit_set_bk.png"/>
+
+              <!--<Label float="true" pos="20,55,0,0" width="110" height="20" text="所 在 交 易 所" textcolor="#FF000000" font="2"/>
+              <Edit name="editExchange" float="true" pos="120,55,0,0" width="300" height="25"  textcolor="#FF000000" font="2" bkimage="edit_set_bk.png" readonly="true"/>-->
+
+              <Label float="true" pos="20,55,0,0" width="110" height="20" text="擅  长  项  目" textcolor="#FF000000" font="2"/>
+              
+              <Combo name="comboGoodat" float="true" pos="260,56,0,0" width="158" height="23" normalimage="file='combo_normal.png'" hotimage="file='combo_normal.png' " pushedimage="file='combo_normal.png' " textpadding="4,1,1,1" multiexpanding="true">
+              </Combo>
+              <Edit name="editGoodat" float="true" pos="120,55,0,0" width="280" height="25"  textcolor="#FF000000" font="2" bkimage="edit_set_bk.png" />
+
+              <Label float="true" pos="20,90,0,0" width="110" height="20" text="个  人  说  明" textcolor="#FF000000" font="2"/>
+              <RichEdit name="editDesc" float="true" pos="120,90,0,0" width="300" height="80" bordersize="1" bordercolor="#FFF4F4F4" textcolor="#FF000000" font="2" inset="2,2,2,2" vscrollbar="true"/>
+
+            </VerticalLayout>
+            <Button name="btnApply" float="true" pos="307,190,0,0" width="99" height="31" text="确认修改" textcolor="#FFFFFFFF"  normalimage="btn_ok_normal.png" hotimage="btn_ok_hot.png" font="6"/>
+          </HorizontalLayout>
+        </VerticalLayout>
+
+          <!--<Label float="true" pos="120,50,0,0" width="60" height="20" text="个人说明：" textcolor="#FFB1B1B1" font="4"/>
+          <RichEdit name="editDesc" float="true" pos="190,50,0,0" width="235" height="45" textcolor="#FFB1B1B1" font="4" bordersize="1" bordercolor="#FFF4F4F4"/>-->
+
+
+          <!--<Label float="true" pos="20,140,0,0" width="60" height="20" text="毕业院校：" textcolor="#FFB1B1B1" font="4" />
+          <Edit name="editSchool" float="true" pos="80,138,0,0" width="331" height="25" text="北京大学, 营销管理" textcolor="#FFB1B1B1" font="4" bkimage="edit_set_bk.png"/>
+
+          <Label float="true" pos="20,190,0,0" width="60" height="20" text="所在位置：" textcolor="#FFB1B1B1" font="4" />
+          <Edit name="editLocation" float="true" pos="80,188,0,0" width="331" height="25"  textcolor="#FFB1B1B1" font="4"  bkimage="edit_set_bk.png"/>
+
+          <Label float="true" pos="20,240,0,0" width="60" height="20" text="文化程度：" textcolor="#FFB1B1B1" font="4" />
+          <Edit name="editEdu" float="true" pos="80,238,0,0" width="331" height="25"  textcolor="#FFB1B1B1" font="4"  bkimage="edit_set_bk.png"/>
+
+          -->
+
+       
+        <HorizontalLayout bkcolor="#FFFFFFFF">
+          <Label float="true" pos="20,20,0,0" width="80" height="20" text="修改密码：" textcolor="#FF000000" font="4"/>
+          <VerticalLayout float="true" pos="15,60,0,0" width="412" height="1" bkcolor="#FFF4F4F4"/>
+          
+          <Label float="true" pos="20,90,0,0" width="100" height="20" text="请输入原密码：" textcolor="#FF000000" font="4" />
+          <Edit name="editOld" float="true" pos="110,88,0,0" width="320" height="25" textcolor="#FF000000" font="4" password="true" bkimage="edit_set_bk.png"/>
+          
+          <Label float="true" pos="20,130,0,0" width="100" height="20" text="请输入新密码：" textcolor="#FF000000" font="4" />
+          <Edit name="editNew" float="true" pos="110,128,0,0" width="320" height="25" textcolor="#FF000000" font="4" password="true" bkimage="edit_set_bk.png"/>
+          
+          <Label float="true" pos="20,170,0,0" width="100" height="20" text="请确认新密码：" textcolor="#FF000000" font="4" />
+          <Edit name="editRe" float="true" pos="110,168,0,0" width="320" height="25" textcolor="#FF000000" font="4" password="true" bkimage="edit_set_bk.png"/>
+          
+          <Button name="btnModify" float="true" pos="307,250,0,0" width="99" height="31" bkimage="btn_ok_normal.png"/>
+          <Container float="true" pos="0,310,0,0" width="442" height="40" bkcolor="#FFEEEEEE">
+            <Label float="true" pos="20,10,0,0" width="200" height="15" text="修改绑定手机请拨打客服服务热线：" textcolor="#FF000000" font="4" />
+            <Label name="labelTel" float="true" pos="210,2,0,0" width="200" height="30" text="400 800 0123" textcolor="#FF000000" font="5"  />
+          </Container>
+        </HorizontalLayout>
+
+        <HorizontalLayout name="horLayoutTab" bkcolor="#FFFFFFFF">
+          <HorizontalLayout >
+            <Label text="文章标题：" float="true" pos="10,18,0,0" width ="60" height="16" textcolor="#FF000000" align="right"/>
+            <Edit name="editTitle" float="true" pos="70,12,0,0" width="331" height="25" bkimage="art_title.png" textcolor="#FF000000"/>
+            <Button name="btnPhoto" float="true" pos="410,13,0,0" width="28" height="24" normalimage="photo_normal.png" hotimage="photo_hot.png"/>
+            <Label text="交易所：" float="true" pos="10,48,0,0" width="60" height="16" textcolor="#FF000000" align="right"/>
+            <Label text="品种：" float="true" pos="10,78,0,0" width="60" height="16" textcolor="#FF000000" align="right"/>
+             <Combo name="comboClass" float="true" pos="70,75,0,0" width="158" height="24" normalimage="file='combo_normal.png'" hotimage="file='combo_normal.png' " pushedimage="file='combo_normal.png' " textpadding="4,1,1,1">
+             </Combo>
+
+            <Combo name="comboExchange" float="true" pos="70,45,0,0" width="158" height="24" normalimage="file='combo_normal.png'" hotimage="file='combo_normal.png' " pushedimage="file='combo_normal.png' " textpadding="4,1,1,1">
+            </Combo>
+            
+            <RichEdit name="editContent" float="true" pos="10,108,0,0" width="415" height="190" bordersize="1" bordercolor="#FFEBEBEB" textcolor="#FF000000" tipvalue="文章内容" inset="5,5,5,5"/>
+            
+            <Label float="true" pos="10,298,0,0" width="415" height="30" bordersize="1" bordercolor="#FFEBEBEB" />
+            <Button name="btnRelease" float="true" pos="290,300,0,0" width="79" height="24" normalimage="btnRelease_normal.png" hotimage="btnRelease_hot.png"/>
+            <Button name="btnCancel" float="true" pos="373,300,0,0" width="47" height="24" normalimage="btnCancel_normal.png" hotimage="btnCancel_hot.png"/>
+
+          </HorizontalLayout>
+        </HorizontalLayout>
+      </TabLayout>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

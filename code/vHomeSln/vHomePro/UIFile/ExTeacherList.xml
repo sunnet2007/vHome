@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window>
   <Font id="0" name="微软雅黑" size="40" bold="true" />
-  <Container name ="12345" height="85" width="200" inset="2,2,2,2">
-   <!-- <VerticalLayout > -->
+  <Container name="container" height="85" width="200" inset="2,2,2,2">
       <Label name="labelImg" float="true" pos="12,12,62,62" width="50" height="50" bkimage="jiaoyisuo_icon.png"/>
-      <Label name="labelName" float="true" pos="70,10,0,0" width="180" height="20" text="天津电交所" font="0"/>
-      <Label name="labelAge" float="true" pos="70,30,0,0" width="40" height="15" text="25岁" />
-      <Label name="labelAddr" float="true" pos="110,30,0,0" width="60" height="15" text="安徽 合肥"/>
-      <Button name="btnCare" float="true" pos="75,45,0,0" width="49" height="20" bkimage="btncare_normal.png" />
-      <Button name="btnTalk" float="true" pos="135,45,0,0" width="26" height="20" bkimage="btntalk_normal.png" />
-    <!-- </VerticalLayout> -->
+      <Label name="labelName" float="true" pos="70,10,0,0" width="120" height="20"  font="0" endellipsis="true" />
+      <!--<Label name="labelAge" float="true" pos="70,30,0,0" width="40" height="15" text="25岁" />
+      <Label name="labelAddr" float="true" pos="110,30,0,0" width="60" height="15" text="安徽 合肥"/>-->
+      <Button name="btnCare" float="true" pos="75,45,0,0" width="49" height="20" normalimage="btncare_normal.png" hotimage="btncare_hot.png" textcolor="#FFFFFFFF"/>
   </Container>
 </Window>

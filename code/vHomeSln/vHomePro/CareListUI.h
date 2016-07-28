@@ -10,7 +10,7 @@ public:
 
 
 	void DoEvent(TEventUI& event);
-	bool SelectItem(int iIndex, bool bTakeFocus/*  = false */);
+	//bool SelectItem(int iIndex, bool bTakeFocus/*  = false */);
 
 	bool AddItem(const CTeacher& teacher);
 

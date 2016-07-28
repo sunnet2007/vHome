@@ -2,17 +2,18 @@
 <Window>
   <Font id="0" name="微软雅黑" size="40" bold="true" />
   <ListContainerElement height="85" menu="true">
-      <VerticalLayout >
+      <VerticalLayout name="verLayout">
         <Label name="labelLogo" float="true" pos="12,12,62,62" width="50" height="50" bkimage="jiaoyisuo_icon.png"/>
-        <Label name="labelName" float="true" pos="70,10,0,0" width="60" height="20" text="天津电交所" font="0"/>
+        <Label name="labelName" float="true" pos="70,10,0,0" width="120" height="20" text="天津电交所" font="0"/>
         <Label name="labelTag1" float="true" pos="74,35,0,0" width="40" height="15" text="商务厅" />
         <Label name="labelTag2" float="true" pos="120,35,0,0" width="40" height="15" text="金融办" />
       <!-- 
       <Label name="labelTime" float="true" pos="220,10,0,0" width="30" height="15" text="8:00" /> 
       -->
-      <Label name="labelIcon" float="true" pos="72,50,0,0" width="18" height="22" bkimage="person_icon.png"/>
+        <Label name="labelIcon" float="true" pos="72,50,0,0" width="18" height="22" bkimage="person_icon.png"/>
         <Label name="labelNum"  float="true" pos="90,50,0,0" width="20" height="20" text="1241" textcolor="#FF4BC59A"/>
         <Label float="true" pos="110,50,0,0" width="60" height="20" text="人参加"/>
+        <VerticalLayout bkcolor="#FFD6D6D6" height="1"/>
       </VerticalLayout>
   </ListContainerElement>
 </Window>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window size="300,448" caption ="0,0,0,32" >
+<Window size="300,448" caption ="0,0,0,-1" >
   <Font id="0" name="宋体" size="12" blod="true" />
   <Font id="1" name="微软雅黑" size="13" blod="true"/>
   <VerticalLayout bkimage="file='bk_login.png' " fade="true"> <!-- bkcolor="#FF0A3978" bkcolor2="#FFAEC8E2"-->
@@ -9,7 +9,7 @@
       <VerticalLayout />
       <VerticalLayout width="50" fade="true">
         <Button name="btnMin" tooltip="最小化" float="true" pos="0,0,0,0"  width="23" height="29" normalimage="min_nor.png" hotimage="min_hot.png"/>
-        <Button name="btnClose" tooltip="关闭" float="true" pos="23,0,0,0" width="27" height="29" normalimage="close_normal.png" hotimage="close_hot.png"/>
+        <Button name="btnClose" tooltip="关闭" float="true" pos="23,0,0,0" width="27" height="29" normalimage="file='close_normal.png' dest='7,8,19,20'" hotimage="close_hot.png"/>
       </VerticalLayout>
     </HorizontalLayout>
     
@@ -19,24 +19,26 @@
     </HorizontalLayout>
     
     <!--账号 密码-->
-    <HorizontalLayout>
+    <HorizontalLayout >
+      <Label name="labelTip" float="true" pos="50,20,0,0" width="200" height="20" textcolor="#FFFF0000" visible="false"/>
       <Label name="labelAccount" bkimage="edit_nor.png" float="true" pos="50,40,0,0" width="199" height="35" />
-      <Edit name="editAccount" tipvalue="账号/手机" textcolor="#FF000000" float="true" pos="56,43,0,0" width="165" height="28" /> 
+      <Edit name="editAccount" tipvalue="账号/手机" textcolor="#FF000000" float="true" pos="56,43,0,0" width="165" height="28" />
       <Button name="btnOpenKeyBoard" float="true" pos="218,45,0,0" width="24" height="24" bkimage="open_nor.png"/>
 
       <Label name="labelPassword" bkimage="edit_nor.png" float="true" pos="50,85,0,0" width="199" height="35"/>
       <Edit name="editPassword" tipvalue="密码"   float="true" pos="56,87,0,0" width="165" height="28" password="true" passwordchar="*"/> 
       
       <Button name="btnLogin" float="true" pos="218,90,0,0" width="24" height="24" bkimage="login_nor.png" />
-      <CheckBox name="chRemPwd" bkimage="file='check_nor.png' dest='0,2,16,18'" float="true" pos="60,130,0,0" width="100" height="20" text="记住密码" textcolor="#FFFFFFFF"/>
-      <CheckBox name="chAutoLogin" bkimage="file='check_nor.png' dest='0,2,16,18'" float="true" pos="160,130,0,0" width="100" height="20" text="自动登录" textcolor="#FFFFFFFF"/>
-    </HorizontalLayout>
+      <CheckBox name="chRemPwd"  float="true" pos="60,130,0,0" width="100" height="20" text="记住密码" textcolor="#FFFFFFFF" normalimage="file='check_nor.png' dest='0,2,16,18'" selectedimage="file='check_selected.png' dest='2,2,16,16'"/>
+      <CheckBox name="chAutoLogin" float="true" pos="160,130,0,0" width="100" height="20" text="自动登录" textcolor="#FFFFFFFF" normalimage="file='check_nor.png' dest='0,2,16,18'" selectedimage="file='check_selected.png' dest='2,2,16,16'"/>
+      <Button name="btnLogin2" float="true" pos="105,160,0,0" width="93" height="30" normalimage="btn_login2_normal.png" pushedimage="btn_login2_normal.png" hotimage="btn_login2_pushed.png" text="登录" font="1" textcolor="#FFFFFFFF"/>
+    </HorizontalLayout> 
     
     <!--底部-->
-    <HorizontalLayout height="40"  fade="true">
-      <Label bkcolor="#FFFFFFFF" float="true" pos="2,0,0,0" width="296" height="40"/>
-      <Button name="btnReg" text="注册" textcolor="#FF0164FF" font="1" float="true" pos="45,10,0,0" width="25" height="20"/>
-      <Button name="btnForPwd" text="忘记密码" textcolor="#FF0164FF" font="1" float="true" pos="90,10,0,0" width="50" height="20"/>
+    <HorizontalLayout height="39"  fade="true">
+      <Label bkcolor="#FFFFFFFF" float="true" pos="0,0,0,0" width="300" height="40"/>
+      <Button name="btnReg" text="注册" textcolor="#FF0164FF" font="1" float="true" pos="110,10,0,0" width="25" height="20"/>
+      <Button name="btnForPwd" text="忘记密码" textcolor="#FF0164FF" font="1" float="true" pos="150,10,0,0" width="50" height="20"/>
     </HorizontalLayout>
   </VerticalLayout>
 </Window>

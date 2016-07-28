@@ -13,3 +13,5 @@ void CharToTchar (const char * _char, TCHAR * tchar);
 
 string StringFromLPCTSTR(LPCTSTR str) ;
 std::wstring s2ws(const std::string& s);
+
+string LoadMyImage(const string& strDest);

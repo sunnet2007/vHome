@@ -1,6 +1,7 @@
 #include "ExchangeDao.h"
 #include "./Common/Network/HttpClient.h"
 #include "./Common/Jsoncpp/json/json.h"
+//#include "./Common/Jsoncpp/include/json/json.h"
 #include "./Common/Utility/StringFuns.h"
 #include <tchar.h>
 #include "StringUtil.h"
@@ -10,9 +11,6 @@
 
 CExchangeDao::CExchangeDao(void)
 {
-	//Server server;
-	//CAppConfig::GetServer(server);
-	//m_strURL = server.strProtocol + "://" + server.strHost + ":" + server.strPort;
 }
 
 
@@ -21,9 +19,10 @@ CExchangeDao::~CExchangeDao(void)
 }
 
 // 获取所有交易所信息
-int CExchangeDao::GetAllExchanges(vector<CExchange>& vecExchange, vector<CBanner>& vecBanner,CResMsg& msg)
+int CExchangeDao::GetAllExchanges(const string& strToken, vector<CExchange>& vecExchange, vector<CBanner>& vecBanner,CResMsg& msg)
 {
 	CHttpClient client;
+	client.SetReqArg("token", strToken);
 	client.SetReqCmd("POST");
 
 	//string strUrl = m_strURL + "/index.php/app/nos_fenxi";
@@ -97,18 +96,22 @@ int CExchangeDao::GetAllExchanges(vector<CExchange>& vecExchange, vector<CBanner
 			CExchange ex;
 			ex.SetId(nId);
 			ex.SetName(strName);
-			ex.SetImage(strImage);
+			
 			ex.SetAuth(vecAuth);
 			ex.SetInfo(strExInfo);
 			ex.SetNum(nNum);
 
-			vecExchange.push_back(ex);
+			int nPos = strImage.find_last_of('/');
+			string srtFileName(strImage.substr(nPos+1));
+			ex.SetImage(srtFileName);
 
 			// 下载远程图像到本地
-			wstring wstrIcon = s2ws(ex.GetImage());
-			string strDest = "./UIFile/eximage_" + strId + ".png";
+			wstring wstrIcon = s2ws(strImage);
+			string strDest = "./UIFile/" + srtFileName;
 			wstring wstrDest = s2ws(strDest);
 			URLDownloadToFile(0, wstrIcon.c_str(), wstrDest.c_str(),0,0);
+			
+			vecExchange.push_back(ex);
 		}
 		return 0;
 
@@ -178,16 +181,21 @@ int CExchangeDao::GetTeacherListByExid(vector<CTeacher>& vecTeacher,int nExid, c
 			teacher.SetStar(nStar);
 			teacher.SetExName(strExName);
 			teacher.SetNum(nNum);
-			teacher.SetImgThumb(strImgThumb);
+		
 			teacher.SetIfAttention(nIfattention);
 
-			vecTeacher.push_back(teacher);
+			int nPos = strImgThumb.find_last_of("/");
+			string strFileName(strImgThumb.substr(nPos+1));
+			
+			teacher.SetImgThumb(strFileName);
 
 			// 下载远程图像到本地
-			wstring wstrIcon = s2ws(teacher.GetImgThumb());
-			string strDest = "./UIFile/teacherimage_" + strUid + ".png";
+			wstring wstrIcon = s2ws(strImgThumb);
+			string strDest = "./UIFile/" + strFileName;
 			wstring wstrDest = s2ws(strDest);
 			URLDownloadToFile(0, wstrIcon.c_str(), wstrDest.c_str(),0,0);
+			
+			vecTeacher.push_back(teacher);
 		}
 		return 0;
 	}
@@ -251,12 +259,15 @@ int CExchangeDao::GetExchangeInfoById(CExchange& exchange, CResMsg& msg)
 
 		exchange.SetName(strName);
 		exchange.SetInfo(strExInfo);
-		exchange.SetImage(strImg);
+	
 		exchange.SetAuth(vecAuth);
 
+		int nPos = strImg.find_last_of("/");
+		string strFileName(strImg.substr(nPos+1));
+		exchange.SetImage(strFileName);
 		// 下载远程图像到本地
-		wstring wstrIcon = s2ws(exchange.GetImage());
-		string strDest = "./UIFile/eximage_" + strId + ".png";
+		wstring wstrIcon = s2ws(strImg);
+		string strDest = "./UIFile/" + strFileName;
 		wstring wstrDest = s2ws(strDest);
 		URLDownloadToFile(0, wstrIcon.c_str(), wstrDest.c_str(),0,0);
 
@@ -266,4 +277,91 @@ int CExchangeDao::GetExchangeInfoById(CExchange& exchange, CResMsg& msg)
 	msg.SetInfo("网络错误");
 	return 1;
 
+}
+
+// 讲师首页交易所信息
+int CExchangeDao::GetExchanges(vector<CExchange>& vecExchange, CResMsg& msg)
+{
+	CHttpClient client;
+	client.SetReqCmd("POST");
+
+	//string strUrl = m_strURL + "/index.php/app/nos_fenxi";
+	int nRes = client.AccessUrl(CAppConfig::NOS_TEACHER_INDEX);
+	if (nRes != 0)
+	{
+		msg.SetStatus(-1);
+		msg.SetInfo("网络错误");
+		return 1;
+	}
+
+	int nStatusCode = client.GetResStatusCode();
+	if (nStatusCode != 200)
+	{
+		msg.SetStatus(-1);
+		msg.SetInfo("网络错误");
+		return 1;
+	}
+
+	string strResBody;
+	client.GetResBody(strResBody);
+
+	Json::Reader reader;
+	Json::Value root;
+
+	if (reader.parse(strResBody, root))
+	{
+		string strStatus = root["status"].asString();
+		int nStatus = atoi(strStatus.c_str());
+		msg.SetStatus(nStatus);
+		msg.SetInfo(root["info"].asString());
+
+		Json::Value data = root["data"];
+		Json::Value lstBanner = data["banner"];
+		Json::Value lstExchange = data["exchangeinfo"];
+
+		// 广告列表
+		//int nBannerSize = lstBanner.size();
+		//for (int i = 0; i < nBannerSize; i++)
+		//{
+		//	string strLink = lstBanner[i]["link"].asString();
+		//	string strImgThumb = lstBanner[i]["imgthumb"].asString();
+
+		//	CBanner banner;
+		//	banner.SetLink(strLink);
+		//	banner.SetImgThumb(strImgThumb);
+		//	vecBanner.push_back(banner);
+		//}
+
+		// 交易所列表
+		int nExSize = lstExchange.size();
+		for (int i = 0; i < nExSize; i++)
+		{
+			string strId = lstExchange[i]["id"].asString();
+			int nId = atoi(strId.c_str());
+
+			string strName = lstExchange[i]["ex_name"].asString();
+			string strImage = lstExchange[i]["excimg"].asString();
+
+
+			CExchange ex;
+			ex.SetId(nId);
+			ex.SetName(strName);
+			
+			int nPos = strImage.find_last_of('/');
+			string srtFileName(strImage.substr(nPos+1));
+			ex.SetImage(srtFileName);
+			vecExchange.push_back(ex);
+
+			// 下载远程图像到本地
+			wstring wstrIcon = s2ws(strImage);
+			string strDest = "./UIFile/" + srtFileName;
+			wstring wstrDest = s2ws(strDest);
+			URLDownloadToFile(0, wstrIcon.c_str(), wstrDest.c_str(),0,0);
+		}
+		return 0;
+
+	}
+	msg.SetStatus(-1);
+	msg.SetInfo("网络错误");
+	return  1;
 }

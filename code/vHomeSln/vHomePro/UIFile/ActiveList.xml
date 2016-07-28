@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <Font id="0" name="微软雅黑" size="16" bold="true" />
+  <Font id="1" name="微软雅黑" size="8" bold="false"/>
+  <ListContainerElement height="98">
+      <VerticalLayout >
+        <Label name="labelLogo" float="true" pos="12,12,0,0" width="90" height="70" bkimage="active_image.png"/>
+        <Label name="labelName" float="true" pos="110,10,0,0" width="160" height="25" text="爱在春季活动主题" font="0" textcolor="#FF787878"/>
+        <Label name="labelContent" float="true" pos="110,45,0,0" width="40" height="15" text="不长不短的距离" font="1" textcolor="#FFD6D6D6"/>
+
+        <Label name="labelIcon" float="true" pos="110,70,0,0" width="18" height="22" bkimage="person_icon.png"/>
+        <Label name="labelNum"  float="true" pos="128,70,0,0" width="20" height="20" text="1241" textcolor="#FF4BC59A"/>
+        <Label float="true" pos="148,70,0,0" width="60" height="20" text="人参加"/>
+        <Button name="btnView" float="true" pos="670,70,0,0" width="49" height="20" bkimage="view_active.png" />
+        <VerticalLayout bkcolor="#FFD6D6D6" height="1"/>
+      </VerticalLayout>
+  </ListContainerElement>
+</Window>

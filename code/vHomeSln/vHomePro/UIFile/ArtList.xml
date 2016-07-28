@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <Font id="0" name="微软雅黑" size="22" bold="true"/>
+  <Font id="1" name="微软雅黑" size="14" />
+  <Font id="2" name="微软雅黑" size="14" />
+  <Font id="3" name="微软雅黑" size="13" />
+  <Font id="4" name="微软雅黑" size="12" />
+  <Font id="5" name="微软雅黑" size="16" />
+  <ListContainerElement height="85" menu="false">
+    <VerticalLayout >
+      <HorizontalLayout>
+        <HorizontalLayout name="horLayoutLogo" width="90" >
+          <Label name="labelLogo" float="true" pos="12,12,70,62" width="75" height="55" />
+        </HorizontalLayout>
+        <HorizontalLayout>
+          <Label name="labelTitle" float="true" pos="20,10,0,0" width="166" height="20" font="0" textcolor="#FF000000" endellipsis="true"/>
+          <RichEdit name="editContent" float="true" pos="20,35,0,0" width="220" height="40"  endellipsis="true" readonly="true" font="1"/>
+        </HorizontalLayout>
+      </HorizontalLayout>
+      <HorizontalLayout bkcolor="#FFD6D6D6" height="1"/>
+    </VerticalLayout>
+  </ListContainerElement>
+</Window>
